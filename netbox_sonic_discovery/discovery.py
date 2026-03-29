@@ -440,11 +440,12 @@ def sync_lldp_cables(device, driver, log_fn=None):
 
 
 def _sync_evpn_rt_rd(device, driver, log_fn=None):
-    """Fetch EVPN VNI state and return {vlan_name: {rd, import_rts, export_rts}}.
+    """Fetch EVPN VNI state and L3VNI-to-VRF bindings.
 
-    SONiC exposes RD and RTs per-VNI under the BGP EVPN config, not on the
-    network-instance itself. This fetches the BGP global EVPN VNI state to
-    get those values.
+    Returns dict with:
+      _default_rd: router-id based RD for default VRF
+      _l3vni_map: {vrf_name: {vni, local_as}} from sonic-vrf + BGP
+      <vni_number>: {rd, import_rts, export_rts, type} for L2VNIs
     """
     log = log_fn or logger.info
     bgp_global_path = (
@@ -452,15 +453,20 @@ def _sync_evpn_rt_rd(device, driver, log_fn=None):
         "/network-instance=default/protocols/protocol=BGP,bgp/bgp/global"
     )
     bgp_global = driver._get_json(bgp_global_path)
-    router_id = (
+    default_router_id = (
         bgp_global.get("openconfig-network-instance:global", {})
         .get("config", {})
         .get("router-id", "")
     )
+    default_as = int(
+        bgp_global.get("openconfig-network-instance:global", {})
+        .get("config", {})
+        .get("as", 0)
+    )
 
-    result = {"_default_rd": f"{router_id}:0" if router_id else ""}
+    result = {"_default_rd": f"{default_router_id}:0" if default_router_id else ""}
 
-    # Walk EVPN AFs to find VNI RT/RD data
+    # Walk EVPN AFs for L2VNI RT/RD data
     for af in (
         bgp_global.get("openconfig-network-instance:global", {})
         .get("afi-safis", {})
@@ -483,6 +489,34 @@ def _sync_evpn_rt_rd(device, driver, log_fn=None):
                 "type": vni_type,
             }
 
+    # Fetch L3VNI-to-VRF bindings from sonic-vrf
+    l3vni_map = {}
+    sonic_vrf = driver._get_json("sonic-vrf:sonic-vrf")
+    for vrf_entry in (
+        sonic_vrf.get("sonic-vrf:sonic-vrf", {})
+        .get("VRF", {})
+        .get("VRF_LIST", [])
+    ):
+        vrf_name = vrf_entry.get("vrf_name", "")
+        vni = vrf_entry.get("vni")
+        if vni and vrf_name != "default":
+            # Get per-VRF BGP config for router-id and AS
+            vrf_bgp_path = (
+                "openconfig-network-instance:network-instances"
+                f"/network-instance={vrf_name}/protocols/protocol=BGP,bgp/bgp/global/config"
+            )
+            vrf_bgp = driver._get_json(vrf_bgp_path)
+            vrf_cfg = vrf_bgp.get("openconfig-network-instance:config", {})
+            vrf_router_id = vrf_cfg.get("router-id", default_router_id)
+            vrf_as = int(vrf_cfg.get("as", default_as))
+
+            l3vni_map[vrf_name] = {
+                "vni": vni,
+                "local_as": vrf_as,
+                "router_id": vrf_router_id,
+            }
+
+    result["_l3vni_map"] = l3vni_map
     return result
 
 
@@ -565,9 +599,12 @@ def sync_vrfs(device, driver, log_fn=None):
         default_vrf.save()
         log(f"  Set RD {default_rd} on default VRF")
 
-    # Sync EVPN VNIs as L2VPN objects with RT/RD
+    # Sync EVPN L2VNIs as L2VPN objects with RT/RD
     iface_ct = ContentType.objects.get_for_model(Interface)
     for vni_num, vni_data in evpn_data.items():
+        # Skip metadata keys
+        if isinstance(vni_num, str):
+            continue
         rd = vni_data.get("rd", "")
         import_rts = vni_data.get("import_rts", [])
         export_rts = vni_data.get("export_rts", [])
@@ -600,30 +637,40 @@ def sync_vrfs(device, driver, log_fn=None):
                 rt_count += 1
                 log(f"  Added export RT {rt_name} to {l2vpn_name}")
 
-        # Create VLAN and terminate the L2VPN on it
-        # Find Vlan network-instances that map to this VNI
+        # Find the VLAN mapped to this VNI via VXLAN tunnel map
         vlan_ct = ContentType.objects.get_for_model(VLAN)
-        for ni_name, ni_info in instances.items():
-            if not ni_name.startswith("Vlan"):
+        vxlan_maps = driver._get_json("sonic-vxlan:sonic-vxlan/VXLAN_TUNNEL_MAP")
+        for tm in (
+            vxlan_maps.get("sonic-vxlan:VXLAN_TUNNEL_MAP", {})
+            .get("VXLAN_TUNNEL_MAP_LIST", [])
+        ):
+            if int(tm.get("vni", 0)) != vni_num:
                 continue
-            m = re.match(r"Vlan(\d+)", ni_name)
+            vlan_name = tm.get("vlan", "")  # e.g. "Vlan100"
+            m = re.match(r"Vlan(\d+)", vlan_name)
             if not m:
                 continue
             vlan_vid = int(m.group(1))
 
-            # Create or get the VLAN object
+            # Skip L3VNI transit VLANs (not real L2 service VLANs)
+            l3vni_map = evpn_data.get("_l3vni_map", {})
+            is_l3vni_vlan = any(
+                info["vni"] == vni_num for info in l3vni_map.values()
+            )
+            if is_l3vni_vlan:
+                continue
+
             vlan_obj, vlan_created = VLAN.objects.get_or_create(
                 vid=vlan_vid,
                 site=device.site,
                 defaults={
-                    "name": ni_name,
+                    "name": vlan_name,
                     "status": VLANStatusChoices.STATUS_ACTIVE,
                 },
             )
             if vlan_created:
-                log(f"  Created VLAN {vlan_vid} ({ni_name})")
+                log(f"  Created VLAN {vlan_vid} ({vlan_name})")
 
-            # Terminate L2VPN on the VLAN (not the interface)
             term_exists = L2VPNTermination.objects.filter(
                 assigned_object_type=vlan_ct,
                 assigned_object_id=vlan_obj.pk,
@@ -635,6 +682,36 @@ def sync_vrfs(device, driver, log_fn=None):
                     assigned_object_id=vlan_obj.pk,
                 )
                 log(f"  Terminated {l2vpn_name} on VLAN {vlan_vid}")
+
+    # Sync L3VNI bindings — set RD and RT on tenant VRFs
+    l3vni_map = evpn_data.get("_l3vni_map", {})
+    for vrf_name, l3vni_info in l3vni_map.items():
+        vni = l3vni_info["vni"]
+        local_as = l3vni_info["local_as"]
+        router_id = l3vni_info["router_id"]
+
+        vrf = VRF.objects.filter(name=vrf_name).first()
+        if not vrf:
+            continue
+
+        # Auto-derive RD: router-id:VNI (SONiC's default behavior)
+        derived_rd = f"{router_id}:{vni}"
+        if not vrf.rd or vrf.rd != derived_rd:
+            vrf.rd = derived_rd
+            vrf.save()
+            log(f"  Set RD {derived_rd} on VRF {vrf_name} (L3VNI {vni})")
+
+        # Auto-derive RT: AS:VNI (SONiC's default for L3VNI)
+        derived_rt = f"{local_as}:{vni}"
+        rt_obj, _ = RouteTarget.objects.get_or_create(name=derived_rt)
+        if rt_obj not in vrf.import_targets.all():
+            vrf.import_targets.add(rt_obj)
+            rt_count += 1
+            log(f"  Added import RT {derived_rt} to VRF {vrf_name}")
+        if rt_obj not in vrf.export_targets.all():
+            vrf.export_targets.add(rt_obj)
+            rt_count += 1
+            log(f"  Added export RT {derived_rt} to VRF {vrf_name}")
 
     result = {"created": created, "assigned": assigned, "route_targets": rt_count}
     if created or assigned or rt_count:
