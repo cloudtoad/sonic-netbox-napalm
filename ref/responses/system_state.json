@@ -1,0 +1,12 @@
+{
+    "openconfig-system:state": {
+        "openconfig-system-ext:auto-breakout": "DISABLE",
+        "boot-time": "1774803266000000000",
+        "current-datetime": "2026-03-29T17:04:23Z",
+        "hostname": "leaf1",
+        "openconfig-system-deviation:intf-naming-mode": "STANDARD",
+        "openconfig-system-deviation:resource-stats-polling-interval": 120,
+        "openconfig-system-ext:suppress-fib-pending": "DISABLED",
+        "switching-mode": "STORE_AND_FORWARD"
+    }
+}

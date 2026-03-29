@@ -1,0 +1,119 @@
+{
+    "openconfig-network-instance:neighbors": {
+        "neighbor": [
+            {
+                "afi-safis": {
+                    "afi-safi": [
+                        {
+                            "afi-safi-name": "openconfig-bgp-types:IPV4_UNICAST",
+                            "config": {
+                                "afi-safi-name": "openconfig-bgp-types:IPV4_UNICAST",
+                                "enabled": true
+                            },
+                            "state": {
+                                "active": true,
+                                "afi-safi-name": "openconfig-bgp-types:IPV4_UNICAST",
+                                "enabled": true,
+                                "prefixes": {
+                                    "received": 2,
+                                    "sent": 3
+                                }
+                            }
+                        },
+                        {
+                            "afi-safi-name": "openconfig-bgp-types:L2VPN_EVPN",
+                            "config": {
+                                "afi-safi-name": "openconfig-bgp-types:L2VPN_EVPN",
+                                "enabled": true
+                            },
+                            "state": {
+                                "active": true,
+                                "afi-safi-name": "openconfig-bgp-types:L2VPN_EVPN",
+                                "enabled": true,
+                                "prefixes": {
+                                    "received": 3,
+                                    "sent": 6
+                                }
+                            }
+                        }
+                    ]
+                },
+                "config": {
+                    "enabled": true,
+                    "neighbor-address": "10.1.0.1",
+                    "peer-as": 65002
+                },
+                "neighbor-address": "10.1.0.1",
+                "state": {
+                    "connections-dropped": "0",
+                    "dynamically-configured": false,
+                    "enabled": true,
+                    "established-transitions": "1",
+                    "host-name-cap": {
+                        "hostname-advertised": "leaf1",
+                        "hostname-received": "leaf2"
+                    },
+                    "last-established": "492",
+                    "last-read": "12",
+                    "last-reset-reason": "No AFI/SAFI activated for peer",
+                    "last-reset-time": "506",
+                    "last-write": "12",
+                    "local-as": 65001,
+                    "messages": {
+                        "received": {
+                            "CAPABILITY": "0",
+                            "KEEPALIVE": "9",
+                            "NOTIFICATION": "0",
+                            "OPEN": "1",
+                            "ROUTE-REFRESH": "0",
+                            "UPDATE": "10"
+                        },
+                        "sent": {
+                            "CAPABILITY": "0",
+                            "KEEPALIVE": "9",
+                            "NOTIFICATION": "0",
+                            "OPEN": "1",
+                            "ROUTE-REFRESH": "0",
+                            "UPDATE": "10"
+                        }
+                    },
+                    "neighbor-address": "10.1.0.1",
+                    "peer-as": 65002,
+                    "peer-port": 54574,
+                    "queues": {
+                        "input": 0,
+                        "output": 0
+                    },
+                    "remote-router-id": "10.0.0.2",
+                    "session-state": "ESTABLISHED",
+                    "supported-capabilities": [
+                        "openconfig-bgp-types:ASN32",
+                        "openconfig-bgp-types:EXTENDMSG",
+                        "openconfig-bgp-types:ADD_PATHS",
+                        "openconfig-bgp-types:ROUTE_REFRESH",
+                        "openconfig-bgp-types:MPBGP",
+                        "openconfig-bgp-types:GRACEFUL_RESTART",
+                        "openconfig-bgp-types:HOSTNAME_ADVERTISED_ONLY",
+                        "openconfig-bgp-types:HOSTNAME_RECEIVED_ONLY"
+                    ]
+                },
+                "timers": {
+                    "state": {
+                        "connect-retry": 30,
+                        "keepalive-interval": 60,
+                        "minimum-advertisement-interval": 0,
+                        "negotiated-hold-time": 180
+                    }
+                },
+                "transport": {
+                    "state": {
+                        "local-address": "10.1.0.0",
+                        "local-port": 179,
+                        "remote-address": "10.1.0.1",
+                        "remote-port": 54574
+                    }
+                }
+            }
+        ]
+    }
+}

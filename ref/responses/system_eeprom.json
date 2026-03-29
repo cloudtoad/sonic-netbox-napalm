@@ -1,0 +1,31 @@
+{
+    "openconfig-platform:component": [
+        {
+            "config": {
+                "name": "System Eeprom"
+            },
+            "name": "System Eeprom",
+            "state": {
+                "openconfig-platform-ext:base-mac-address": "00:00:00:00:00:01",
+                "crc-32": "0xB01CD15D",
+                "description": "x86_64-kvm_x86_64-r0",
+                "device-version": "1",
+                "empty": false,
+                "hardware-version": "A01",
+                "id": "SONiC",
+                "location": "Slot 1",
+                "openconfig-platform-ext:mac-addresses": 16,
+                "mfg-date": "2019-10-19",
+                "name": "System Eeprom",
+                "openconfig-platform-ext:onie-version": "master-201811170418",
+                "oper-status": "openconfig-platform-types:ACTIVE",
+                "part-no": "000000",
+                "removable": false,
+                "serial-no": "0000000000000000000",
+                "service-tag": "000000",
+                "software-version": "'4.4.2-Enterprise_Base'",
+                "vendor-name": "SONiC"
+            }
+        }
+    ]
+}

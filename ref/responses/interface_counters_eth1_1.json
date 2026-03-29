@@ -1,0 +1,27 @@
+{
+    "openconfig-interfaces:counters": {
+        "in-bits-per-second": "120",
+        "in-broadcast-pkts": "0",
+        "in-discards": "0",
+        "in-errors": "0",
+        "in-multicast-pkts": "0",
+        "in-octets": "15806",
+        "in-octets-per-second": "15",
+        "in-pkts": "82",
+        "in-pkts-per-second": "0",
+        "in-unicast-pkts": "82",
+        "in-utilization": 0,
+        "last-clear": "0",
+        "out-bits-per-second": "64",
+        "out-broadcast-pkts": "0",
+        "out-discards": "0",
+        "out-errors": "0",
+        "out-multicast-pkts": "0",
+        "out-octets": "14403",
+        "out-octets-per-second": "8",
+        "out-pkts": "59",
+        "out-pkts-per-second": "0",
+        "out-unicast-pkts": "59",
+        "out-utilization": 0
+    }
+}

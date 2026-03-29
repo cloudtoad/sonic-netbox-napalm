@@ -1,0 +1,6 @@
+<form method="post" action="{% url 'plugins:netbox_sonic_discovery:device_sonic_sync' pk=device.pk %}" style="display: inline">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-sm btn-primary">
+        <i class="mdi mdi-sync"></i> Sync from SONiC
+    </button>
+</form>

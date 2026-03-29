@@ -1,0 +1,71 @@
+{
+    "openconfig-network-instance:global": {
+        "afi-safis": {
+            "afi-safi": [
+                {
+                    "afi-safi-name": "openconfig-bgp-types:IPV4_UNICAST",
+                    "config": {
+                        "afi-safi-name": "openconfig-bgp-types:IPV4_UNICAST"
+                    },
+                    "state": {
+                        "afi-safi-name": "openconfig-bgp-types:IPV4_UNICAST"
+                    }
+                },
+                {
+                    "afi-safi-name": "openconfig-bgp-types:L2VPN_EVPN",
+                    "config": {
+                        "afi-safi-name": "openconfig-bgp-types:L2VPN_EVPN"
+                    },
+                    "l2vpn-evpn": {
+                        "openconfig-bgp-evpn-ext:config": {
+                            "advertise-all-vni": true
+                        },
+                        "openconfig-bgp-evpn-ext:state": {
+                            "advertise-all-vni": true
+                        },
+                        "openconfig-bgp-evpn-ext:vnis": {
+                            "vni": [
+                                {
+                                    "config": {
+                                        "vni-number": 10100
+                                    },
+                                    "state": {
+                                        "advertise-default-gw": false,
+                                        "advertise-svi-ip": false,
+                                        "export-rts": [
+                                            "65001:10100"
+                                        ],
+                                        "external-ip": "0.0.0.0",
+                                        "import-rts": [
+                                            "65001:10100"
+                                        ],
+                                        "is-live": true,
+                                        "mcast-group": "0.0.0.0",
+                                        "originator": "10.0.0.1",
+                                        "route-distinguisher": "10.0.0.1:100",
+                                        "type": "L2",
+                                        "vni-number": 10100
+                                    },
+                                    "vni-number": 10100
+                                }
+                            ]
+                        }
+                    },
+                    "state": {
+                        "afi-safi-name": "openconfig-bgp-types:L2VPN_EVPN"
+                    }
+                }
+            ]
+        },
+        "config": {
+            "as": 65001,
+            "ebgp-requires-policy": false,
+            "router-id": "10.0.0.1"
+        },
+        "state": {
+            "as": 65001,
+            "ebgp-requires-policy": false,
+            "router-id": "10.0.0.1"
+        }
+    }
+}

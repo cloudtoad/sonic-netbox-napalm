@@ -1,0 +1,52 @@
+name: napalm-lab
+
+gns3:
+  host: 192.168.70.200
+  port: 3080
+
+firewall:
+  host: 192.168.70.1
+
+sonic_auth:
+  username: admin
+  password: YourPaSsWoRd
+
+debian_auth:
+  username: debian
+  password: debian
+
+mgmt:
+  cloud_interface: br0
+  cloud_port: 0
+
+templates:
+  sonic: dc223754-bed2-4a81-be93-bb638153206a
+  debian: 0534685c-149d-435e-8d08-72748b2d6c4f
+
+nodes:
+  leaf1: {kind: sonic, x: -200, y: 0}
+  leaf2: {kind: sonic, x: 200, y: 0}
+  h1:    {kind: debian, x: -200, y: 200}
+  h2:    {kind: debian, x: 200, y: 200}
+
+links:
+  # Inter-switch link
+  - endpoints: [leaf1:Eth1/1, leaf2:Eth1/1]
+  # Host links
+  - endpoints: [leaf1:Eth1/2, h1:eth1]
+  - endpoints: [leaf2:Eth1/2, h2:eth1]
+
+scenario:
+  type: l2-evpn
+  fabric:
+    interswitch:
+      link: [leaf1:Eth1/1, leaf2:Eth1/1]
+      subnet: 10.1.0.0/31
+    switches:
+      leaf1: {as: 65001, loopback: 10.0.0.1, access: [Eth1/2]}
+      leaf2: {as: 65002, loopback: 10.0.0.2, access: [Eth1/2]}
+    vlan: 100
+    vni: 10100
+  hosts:
+    h1: {ip: 192.168.100.1/24, iface: eth1}
+    h2: {ip: 192.168.100.2/24, iface: eth1}

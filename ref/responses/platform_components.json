@@ -1,0 +1,724 @@
+{
+    "openconfig-platform:components": {
+        "component": [
+            {
+                "name": "1/49"
+            },
+            {
+                "name": "1/50"
+            },
+            {
+                "name": "1/51"
+            },
+            {
+                "name": "1/52"
+            },
+            {
+                "name": "1/53"
+            },
+            {
+                "name": "1/54"
+            },
+            {
+                "name": "1/55"
+            },
+            {
+                "name": "1/56"
+            },
+            {
+                "name": "Eth1/1"
+            },
+            {
+                "name": "Eth1/2"
+            },
+            {
+                "name": "Eth1/3"
+            },
+            {
+                "name": "Eth1/4"
+            },
+            {
+                "name": "Eth1/5"
+            },
+            {
+                "name": "Eth1/6"
+            },
+            {
+                "name": "Eth1/7"
+            },
+            {
+                "name": "Eth1/8"
+            },
+            {
+                "name": "Eth1/9"
+            },
+            {
+                "name": "Eth1/10"
+            },
+            {
+                "name": "Eth1/11"
+            },
+            {
+                "name": "Eth1/12"
+            },
+            {
+                "name": "Eth1/13"
+            },
+            {
+                "name": "Eth1/14"
+            },
+            {
+                "name": "Eth1/15"
+            },
+            {
+                "name": "Eth1/16"
+            },
+            {
+                "name": "Eth1/17"
+            },
+            {
+                "name": "Eth1/18"
+            },
+            {
+                "name": "Eth1/19"
+            },
+            {
+                "name": "Eth1/20"
+            },
+            {
+                "name": "Eth1/21"
+            },
+            {
+                "name": "Eth1/22"
+            },
+            {
+                "name": "Eth1/23"
+            },
+            {
+                "name": "Eth1/24"
+            },
+            {
+                "name": "Eth1/25"
+            },
+            {
+                "name": "Eth1/26"
+            },
+            {
+                "name": "Eth1/27"
+            },
+            {
+                "name": "Eth1/28"
+            },
+            {
+                "name": "Eth1/29"
+            },
+            {
+                "name": "Eth1/30"
+            },
+            {
+                "name": "Eth1/31"
+            },
+            {
+                "name": "Eth1/32"
+            },
+            {
+                "name": "Eth1/33"
+            },
+            {
+                "name": "Eth1/34"
+            },
+            {
+                "name": "Eth1/35"
+            },
+            {
+                "name": "Eth1/36"
+            },
+            {
+                "name": "Eth1/37"
+            },
+            {
+                "name": "Eth1/38"
+            },
+            {
+                "name": "Eth1/39"
+            },
+            {
+                "name": "Eth1/40"
+            },
+            {
+                "name": "Eth1/41"
+            },
+            {
+                "name": "Eth1/42"
+            },
+            {
+                "name": "Eth1/43"
+            },
+            {
+                "name": "Eth1/44"
+            },
+            {
+                "name": "Eth1/45"
+            },
+            {
+                "name": "Eth1/46"
+            },
+            {
+                "name": "Eth1/47"
+            },
+            {
+                "name": "Eth1/48"
+            },
+            {
+                "name": "Eth1/49"
+            },
+            {
+                "name": "Eth1/50"
+            },
+            {
+                "name": "Eth1/51"
+            },
+            {
+                "name": "Eth1/52"
+            },
+            {
+                "name": "Eth1/53"
+            },
+            {
+                "name": "Eth1/54"
+            },
+            {
+                "name": "Eth1/55"
+            },
+            {
+                "name": "Eth1/56"
+            },
+            {
+                "config": {
+                    "name": "Sensor"
+                },
+                "name": "Sensor",
+                "state": {
+                    "name": "Sensor",
+                    "type": "openconfig-platform-types:SENSOR"
+                },
+                "subcomponents": {
+                    "subcomponent": [
+                        {
+                            "name": "Fan Trays"
+                        },
+                        {
+                            "name": "PSUs"
+                        },
+                        {
+                            "name": "Temperature Sensors",
+                            "openconfig-platform-ext:sensor-categories": {
+                                "sensor-category": [
+                                    {
+                                        "category": "Onboard Temperature Sensors"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "config": {
+                    "name": "SoftwareModule"
+                },
+                "name": "SoftwareModule",
+                "software-module": {
+                    "openconfig-platform-software-ext:docker": {
+                        "docker-version": [
+                            {
+                                "docker-name": "docker-database",
+                                "state": {
+                                    "docker-image-id": "cc928e625f88",
+                                    "docker-name": "docker-database",
+                                    "docker-size": "401MB",
+                                    "docker-tag-id": "4.4.2-Enterprise_Base"
+                                }
+                            },
+                            {
+                                "docker-name": "docker-database",
+                                "state": {
+                                    "docker-image-id": "cc928e625f88",
+                                    "docker-name": "docker-database",
+                                    "docker-size": "401MB",
+                                    "docker-tag-id": "latest"
+                                }
+                            },
+                            {
+                                "docker-name": "docker-dhcp-relay",
+                                "state": {
+                                    "docker-image-id": "45eefd981296",
+                                    "docker-name": "docker-dhcp-relay",
+                                    "docker-size": "451MB",
+                                    "docker-tag-id": "4.4.2-Enterprise_Base"
+                                }
+                            },
+                            {
+                                "docker-name": "docker-dhcp-relay",
+                                "state": {
+                                    "docker-image-id": "45eefd981296",
+                                    "docker-name": "docker-dhcp-relay",
+                                    "docker-size": "451MB",
+                                    "docker-tag-id": "latest"
+                                }
+                            },
+                            {
+                                "docker-name": "docker-eventd",
+                                "state": {
+                                    "docker-image-id": "10ca8d6ba11a",
+                                    "docker-name": "docker-eventd",
+                                    "docker-size": "402MB",
+                                    "docker-tag-id": "4.4.2-Enterprise_Base"
+                                }
+                            },
+                            {
+                                "docker-name": "docker-eventd",
+                                "state": {
+                                    "docker-image-id": "10ca8d6ba11a",
+                                    "docker-name": "docker-eventd",
+                                    "docker-size": "402MB",
+                                    "docker-tag-id": "latest"
+                                }
+                            },
+                            {
+                                "docker-name": "docker-fpm-frr",
+                                "state": {
+                                    "docker-image-id": "d82fb0fc813c",
+                                    "docker-name": "docker-fpm-frr",
+                                    "docker-size": "484MB",
+                                    "docker-tag-id": "4.4.2-Enterprise_Base"
+                                }
+                            },
+                            {
+                                "docker-name": "docker-fpm-frr",
+                                "state": {
+                                    "docker-image-id": "d82fb0fc813c",
+                                    "docker-name": "docker-fpm-frr",
+                                    "docker-size": "484MB",
+                                    "docker-tag-id": "latest"
+                                }
+                            },
+                            {
+                                "docker-name": "docker-gbsyncd-vs",
+                                "state": {
+                                    "docker-image-id": "dcc52d2b0790",
+                                    "docker-name": "docker-gbsyncd-vs",
+                                    "docker-size": "408MB",
+                                    "docker-tag-id": "4.4.2-Enterprise_Base"
+                                }
+                            },
+                            {
+                                "docker-name": "docker-gbsyncd-vs",
+                                "state": {
+                                    "docker-image-id": "dcc52d2b0790",
+                                    "docker-name": "docker-gbsyncd-vs",
+                                    "docker-size": "408MB",
+                                    "docker-tag-id": "latest"
+                                }
+                            },
+                            {
+                                "docker-name": "docker-iccpd",
+                                "state": {
+                                    "docker-image-id": "7121a6ef4fdd",
+                                    "docker-name": "docker-iccpd",
+                                    "docker-size": "451MB",
+                                    "docker-tag-id": "4.4.2-Enterprise_Base"
+                                }
+                            },
+                            {
+                                "docker-name": "docker-iccpd",
+                                "state": {
+                                    "docker-image-id": "7121a6ef4fdd",
+                                    "docker-name": "docker-iccpd",
+                                    "docker-size": "451MB",
+                                    "docker-tag-id": "latest"
+                                }
+                            },
+                            {
+                                "docker-name": "docker-l2mcd",
+                                "state": {
+                                    "docker-image-id": "3711b40170be",
+                                    "docker-name": "docker-l2mcd",
+                                    "docker-size": "448MB",
+                                    "docker-tag-id": "4.4.2-Enterprise_Base"
+                                }
+                            },
+                            {
+                                "docker-name": "docker-l2mcd",
+                                "state": {
+                                    "docker-image-id": "3711b40170be",
+                                    "docker-name": "docker-l2mcd",
+                                    "docker-size": "448MB",
+                                    "docker-tag-id": "latest"
+                                }
+                            },
+                            {
+                                "docker-name": "docker-lldp",
+                                "state": {
+                                    "docker-image-id": "efccde4c1e18",
+                                    "docker-name": "docker-lldp",
+                                    "docker-size": "490MB",
+                                    "docker-tag-id": "4.4.2-Enterprise_Base"
+                                }
+                            },
+                            {
+                                "docker-name": "docker-lldp",
+                                "state": {
+                                    "docker-image-id": "efccde4c1e18",
+                                    "docker-name": "docker-lldp",
+                                    "docker-size": "490MB",
+                                    "docker-tag-id": "latest"
+                                }
+                            },
+                            {
+                                "docker-name": "docker-macsec",
+                                "state": {
+                                    "docker-image-id": "a9735ea43038",
+                                    "docker-name": "docker-macsec",
+                                    "docker-size": "423MB",
+                                    "docker-tag-id": "4.4.2-Enterprise_Base"
+                                }
+                            },
+                            {
+                                "docker-name": "docker-macsec",
+                                "state": {
+                                    "docker-image-id": "a9735ea43038",
+                                    "docker-name": "docker-macsec",
+                                    "docker-size": "423MB",
+                                    "docker-tag-id": "latest"
+                                }
+                            },
+                            {
+                                "docker-name": "docker-nat",
+                                "state": {
+                                    "docker-image-id": "eb7b309e603b",
+                                    "docker-name": "docker-nat",
+                                    "docker-size": "450MB",
+                                    "docker-tag-id": "4.4.2-Enterprise_Base"
+                                }
+                            },
+                            {
+                                "docker-name": "docker-nat",
+                                "state": {
+                                    "docker-image-id": "eb7b309e603b",
+                                    "docker-name": "docker-nat",
+                                    "docker-size": "450MB",
+                                    "docker-tag-id": "latest"
+                                }
+                            },
+                            {
+                                "docker-name": "docker-orchagent",
+                                "state": {
+                                    "docker-image-id": "5508f2a0b91b",
+                                    "docker-name": "docker-orchagent",
+                                    "docker-size": "447MB",
+                                    "docker-tag-id": "4.4.2-Enterprise_Base"
+                                }
+                            },
+                            {
+                                "docker-name": "docker-orchagent",
+                                "state": {
+                                    "docker-image-id": "5508f2a0b91b",
+                                    "docker-name": "docker-orchagent",
+                                    "docker-size": "447MB",
+                                    "docker-tag-id": "latest"
+                                }
+                            },
+                            {
+                                "docker-name": "docker-platform-monitor",
+                                "state": {
+                                    "docker-image-id": "231420a50647",
+                                    "docker-name": "docker-platform-monitor",
+                                    "docker-size": "579MB",
+                                    "docker-tag-id": "4.4.2-Enterprise_Base"
+                                }
+                            },
+                            {
+                                "docker-name": "docker-platform-monitor",
+                                "state": {
+                                    "docker-image-id": "231420a50647",
+                                    "docker-name": "docker-platform-monitor",
+                                    "docker-size": "579MB",
+                                    "docker-tag-id": "latest"
+                                }
+                            },
+                            {
+                                "docker-name": "docker-router-advertiser",
+                                "state": {
+                                    "docker-image-id": "339e46746512",
+                                    "docker-name": "docker-router-advertiser",
+                                    "docker-size": "401MB",
+                                    "docker-tag-id": "4.4.2-Enterprise_Base"
+                                }
+                            },
+                            {
+                                "docker-name": "docker-router-advertiser",
+                                "state": {
+                                    "docker-image-id": "339e46746512",
+                                    "docker-name": "docker-router-advertiser",
+                                    "docker-size": "401MB",
+                                    "docker-tag-id": "latest"
+                                }
+                            },
+                            {
+                                "docker-name": "docker-sflow",
+                                "state": {
+                                    "docker-image-id": "cee20225b0a8",
+                                    "docker-name": "docker-sflow",
+                                    "docker-size": "450MB",
+                                    "docker-tag-id": "4.4.2-Enterprise_Base"
+                                }
+                            },
+                            {
+                                "docker-name": "docker-sflow",
+                                "state": {
+                                    "docker-image-id": "cee20225b0a8",
+                                    "docker-name": "docker-sflow",
+                                    "docker-size": "450MB",
+                                    "docker-tag-id": "latest"
+                                }
+                            },
+                            {
+                                "docker-name": "docker-snmp",
+                                "state": {
+                                    "docker-image-id": "564fdc928a97",
+                                    "docker-name": "docker-snmp",
+                                    "docker-size": "429MB",
+                                    "docker-tag-id": "4.4.2-Enterprise_Base"
+                                }
+                            },
+                            {
+                                "docker-name": "docker-snmp",
+                                "state": {
+                                    "docker-image-id": "564fdc928a97",
+                                    "docker-name": "docker-snmp",
+                                    "docker-size": "429MB",
+                                    "docker-tag-id": "latest"
+                                }
+                            },
+                            {
+                                "docker-name": "docker-sonic-mgmt-framework",
+                                "state": {
+                                    "docker-image-id": "9d67f11b1cd1",
+                                    "docker-name": "docker-sonic-mgmt-framework",
+                                    "docker-size": "657MB",
+                                    "docker-tag-id": "4.4.2-Enterprise_Base"
+                                }
+                            },
+                            {
+                                "docker-name": "docker-sonic-mgmt-framework",
+                                "state": {
+                                    "docker-image-id": "9d67f11b1cd1",
+                                    "docker-name": "docker-sonic-mgmt-framework",
+                                    "docker-size": "657MB",
+                                    "docker-tag-id": "latest"
+                                }
+                            },
+                            {
+                                "docker-name": "docker-sonic-telemetry",
+                                "state": {
+                                    "docker-image-id": "e2c9766c033f",
+                                    "docker-name": "docker-sonic-telemetry",
+                                    "docker-size": "583MB",
+                                    "docker-tag-id": "4.4.2-Enterprise_Base"
+                                }
+                            },
+                            {
+                                "docker-name": "docker-sonic-telemetry",
+                                "state": {
+                                    "docker-image-id": "e2c9766c033f",
+                                    "docker-name": "docker-sonic-telemetry",
+                                    "docker-size": "583MB",
+                                    "docker-tag-id": "latest"
+                                }
+                            },
+                            {
+                                "docker-name": "docker-stp",
+                                "state": {
+                                    "docker-image-id": "be2d762eef7f",
+                                    "docker-name": "docker-stp",
+                                    "docker-size": "451MB",
+                                    "docker-tag-id": "4.4.2-Enterprise_Base"
+                                }
+                            },
+                            {
+                                "docker-name": "docker-stp",
+                                "state": {
+                                    "docker-image-id": "be2d762eef7f",
+                                    "docker-name": "docker-stp",
+                                    "docker-size": "451MB",
+                                    "docker-tag-id": "latest"
+                                }
+                            },
+                            {
+                                "docker-name": "docker-syncd-vs",
+                                "state": {
+                                    "docker-image-id": "6d87151f6b70",
+                                    "docker-name": "docker-syncd-vs",
+                                    "docker-size": "408MB",
+                                    "docker-tag-id": "4.4.2-Enterprise_Base"
+                                }
+                            },
+                            {
+                                "docker-name": "docker-syncd-vs",
+                                "state": {
+                                    "docker-image-id": "6d87151f6b70",
+                                    "docker-name": "docker-syncd-vs",
+                                    "docker-size": "408MB",
+                                    "docker-tag-id": "latest"
+                                }
+                            },
+                            {
+                                "docker-name": "docker-tam",
+                                "state": {
+                                    "docker-image-id": "e8d597dc3767",
+                                    "docker-name": "docker-tam",
+                                    "docker-size": "442MB",
+                                    "docker-tag-id": "4.4.2-Enterprise_Base"
+                                }
+                            },
+                            {
+                                "docker-name": "docker-tam",
+                                "state": {
+                                    "docker-image-id": "e8d597dc3767",
+                                    "docker-name": "docker-tam",
+                                    "docker-size": "442MB",
+                                    "docker-tag-id": "latest"
+                                }
+                            },
+                            {
+                                "docker-name": "docker-teamd",
+                                "state": {
+                                    "docker-image-id": "bc684c38dddb",
+                                    "docker-name": "docker-teamd",
+                                    "docker-size": "448MB",
+                                    "docker-tag-id": "4.4.2-Enterprise_Base"
+                                }
+                            },
+                            {
+                                "docker-name": "docker-teamd",
+                                "state": {
+                                    "docker-image-id": "bc684c38dddb",
+                                    "docker-name": "docker-teamd",
+                                    "docker-size": "448MB",
+                                    "docker-tag-id": "latest"
+                                }
+                            },
+                            {
+                                "docker-name": "docker-udld",
+                                "state": {
+                                    "docker-image-id": "6a15d1168882",
+                                    "docker-name": "docker-udld",
+                                    "docker-size": "455MB",
+                                    "docker-tag-id": "4.4.2-Enterprise_Base"
+                                }
+                            },
+                            {
+                                "docker-name": "docker-udld",
+                                "state": {
+                                    "docker-image-id": "6a15d1168882",
+                                    "docker-name": "docker-udld",
+                                    "docker-size": "455MB",
+                                    "docker-tag-id": "latest"
+                                }
+                            },
+                            {
+                                "docker-name": "docker-vrrp",
+                                "state": {
+                                    "docker-image-id": "9fc2b462f49d",
+                                    "docker-name": "docker-vrrp",
+                                    "docker-size": "457MB",
+                                    "docker-tag-id": "4.4.2-Enterprise_Base"
+                                }
+                            },
+                            {
+                                "docker-name": "docker-vrrp",
+                                "state": {
+                                    "docker-image-id": "9fc2b462f49d",
+                                    "docker-name": "docker-vrrp",
+                                    "docker-size": "457MB",
+                                    "docker-tag-id": "latest"
+                                }
+                            }
+                        ]
+                    },
+                    "openconfig-platform-software-ext:secure-boot": {
+                        "state": {
+                            "status": "NOT_SUPPORTED",
+                            "supported": false
+                        }
+                    },
+                    "state": {
+                        "openconfig-platform-software-ext:asic-version": "vs",
+                        "openconfig-platform-software-ext:build-commit": "96a459db13",
+                        "openconfig-platform-software-ext:build-date": "Fri Mar 14 21:59:34 UTC 2025",
+                        "openconfig-platform-software-ext:built-by": "sonicbld@bld-lvn-csg-01",
+                        "openconfig-platform-software-ext:config-db-version": "version_4_4_1",
+                        "openconfig-platform-software-ext:distribution-version": "Debian 11.11",
+                        "openconfig-platform-software-ext:hardware-version": "A01",
+                        "openconfig-platform-software-ext:hwsku-version": "DellEMC-S5248f-P-25G-DPB",
+                        "openconfig-platform-software-ext:kernel-version": "5.10.0-21-amd64",
+                        "openconfig-platform-software-ext:mfg-name": "SONiC",
+                        "openconfig-platform-software-ext:platform-name": "x86_64-kvm_x86_64-r0",
+                        "openconfig-platform-software-ext:product-description": "Enterprise SONiC Distribution by Dell Technologies",
+                        "openconfig-platform-software-ext:serial-number": "0000000000000000000",
+                        "openconfig-platform-software-ext:software-version": "4.4.2-Enterprise_Base",
+                        "openconfig-platform-software-ext:up-time": "17:04:24 up 9 min, 0 users, load average: 1.41, 4.30, 3.68 "
+                    }
+                },
+                "state": {
+                    "name": "SoftwareModule"
+                }
+            },
+            {
+                "config": {
+                    "name": "Ssdhealth"
+                },
+                "name": "Ssdhealth",
+                "state": {
+                    "firmware-version": "2.5+",
+                    "health": "100.0",
+                    "id": "QEMU HARDDISK",
+                    "name": "Ssdhealth",
+                    "oper-status": "openconfig-platform-types:ACTIVE",
+                    "serial-no": "QM00001",
+                    "temperature": {
+                        "current": "-273"
+                    }
+                }
+            },
+            {
+                "config": {
+                    "name": "System Eeprom"
+                },
+                "name": "System Eeprom",
+                "state": {
+                    "openconfig-platform-ext:base-mac-address": "00:00:00:00:00:01",
+                    "crc-32": "0xB01CD15D",
+                    "description": "x86_64-kvm_x86_64-r0",
+                    "device-version": "1",
+                    "empty": false,
+                    "hardware-version": "A01",
+                    "id": "SONiC",
+                    "location": "Slot 1",
+                    "openconfig-platform-ext:mac-addresses": 16,
+                    "mfg-date": "2019-10-19",
+                    "name": "System Eeprom",
+                    "openconfig-platform-ext:onie-version": "master-201811170418",
+                    "oper-status": "openconfig-platform-types:ACTIVE",
+                    "part-no": "000000",
+                    "removable": false,
+                    "serial-no": "0000000000000000000",
+                    "service-tag": "000000",
+                    "software-version": "'4.4.2-Enterprise_Base'",
+                    "vendor-name": "SONiC"
+                }
+            }
+        ]
+    }
+}

@@ -1,0 +1,1127 @@
+{
+    "openconfig-lldp:interfaces": {
+        "interface": [
+            {
+                "config": {
+                    "name": "Ethernet0"
+                },
+                "name": "Eth1/1",
+                "neighbors": {
+                    "neighbor": [
+                        {
+                            "capabilities": {
+                                "capability": [
+                                    {
+                                        "name": "openconfig-lldp-types:ROUTER",
+                                        "state": {
+                                            "enabled": true,
+                                            "name": "openconfig-lldp-types:ROUTER"
+                                        }
+                                    }
+                                ]
+                            },
+                            "custom-tlvs": {
+                                "tlv": [
+                                    {
+                                        "oui": "0080C2",
+                                        "oui-subtype": "7",
+                                        "state": {
+                                            "oui": "0080C2",
+                                            "oui-subtype": "7",
+                                            "type": 127,
+                                            "value": "MA=="
+                                        },
+                                        "type": 127
+                                    },
+                                    {
+                                        "oui": "00120F",
+                                        "oui-subtype": "4",
+                                        "state": {
+                                            "oui": "00120F",
+                                            "oui-subtype": "4",
+                                            "type": 127,
+                                            "value": "OTEwMA=="
+                                        },
+                                        "type": 127
+                                    }
+                                ]
+                            },
+                            "id": "Eth1/1",
+                            "openconfig-lldp-ext:med": {
+                                "capabilities": {
+                                    "capability": [
+                                        {
+                                            "name": "openconfig-lldp-ext:EXT_MDI_POWER_PD",
+                                            "state": {
+                                                "enabled": true,
+                                                "name": "openconfig-lldp-ext:EXT_MDI_POWER_PD"
+                                            }
+                                        },
+                                        {
+                                            "name": "openconfig-lldp-ext:INVENTORY",
+                                            "state": {
+                                                "enabled": true,
+                                                "name": "openconfig-lldp-ext:INVENTORY"
+                                            }
+                                        },
+                                        {
+                                            "name": "openconfig-lldp-ext:NETWORK_POLICY",
+                                            "state": {
+                                                "enabled": true,
+                                                "name": "openconfig-lldp-ext:NETWORK_POLICY"
+                                            }
+                                        }
+                                    ]
+                                },
+                                "state": {
+                                    "device-class": "NETWORK_CONNECTIVITY",
+                                    "inventory": {
+                                        "asset-id": "",
+                                        "firmware-revision": "1.16.3-debian-1.16.3-2",
+                                        "hardware-revision": "pc-i440fx-noble-v2",
+                                        "manufacturer": "QEMU",
+                                        "model": "Ubuntu 24.04 PC v2 (i440FX + PII",
+                                        "serial-number": "",
+                                        "software-revision": "5.10.0-21-amd64"
+                                    }
+                                }
+                            },
+                            "state": {
+                                "chassis-id": "0c:03:cb:37:00:00",
+                                "chassis-id-type": "MAC_ADDRESS",
+                                "id": "3",
+                                "management-address": "192.168.70.174,2600:1700:6b90:10df::104f",
+                                "port-description": "Ethernet0",
+                                "port-id": "Eth1/1",
+                                "port-id-type": "LOCAL",
+                                "system-description": "SONiC Software Version: SONiC.4.4.2-Enterprise_Base - HwSku: DellEMC-S5248f-P-25G-DPB - Distribution: Debian 11.11 - Kernel: 5.10.0-21-amd64",
+                                "system-name": "leaf2",
+                                "ttl": 120
+                            }
+                        }
+                    ]
+                },
+                "state": {
+                    "counters": {
+                        "openconfig-lldp-ext:ageout": "0",
+                        "frame-discard": "0",
+                        "frame-in": "25",
+                        "frame-out": "29",
+                        "tlv-unknown": "0"
+                    },
+                    "name": "Ethernet0"
+                }
+            },
+            {
+                "config": {
+                    "name": "Ethernet1"
+                },
+                "name": "Eth1/2",
+                "neighbors": {
+                    "neighbor": [
+                        {
+                            "id": "Eth1/2",
+                            "state": {
+                                "chassis-id": "0c:91:66:5d:00:00",
+                                "chassis-id-type": "MAC_ADDRESS",
+                                "id": "1",
+                                "management-address": "192.168.70.172,2600:1700:6b90:10df:e91:66ff:fe5d:0",
+                                "port-description": "ens4",
+                                "port-id": "0c:91:66:5d:00:01",
+                                "port-id-type": "MAC_ADDRESS",
+                                "system-description": "Debian GNU/Linux 12 (bookworm) Linux 6.1.0-22-cloud-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.94-1 (2024-06-21) x86_64",
+                                "system-name": "h1",
+                                "ttl": 120
+                            }
+                        }
+                    ]
+                },
+                "state": {
+                    "counters": {
+                        "openconfig-lldp-ext:ageout": "0",
+                        "frame-discard": "0",
+                        "frame-in": "21",
+                        "frame-out": "24",
+                        "tlv-unknown": "1"
+                    },
+                    "name": "Ethernet1"
+                }
+            },
+            {
+                "config": {
+                    "name": "Ethernet2"
+                },
+                "name": "Eth1/3",
+                "state": {
+                    "counters": {
+                        "openconfig-lldp-ext:ageout": "0",
+                        "frame-discard": "0",
+                        "frame-in": "0",
+                        "frame-out": "0",
+                        "tlv-unknown": "0"
+                    },
+                    "name": "Ethernet2"
+                }
+            },
+            {
+                "config": {
+                    "name": "Ethernet3"
+                },
+                "name": "Eth1/4",
+                "state": {
+                    "counters": {
+                        "openconfig-lldp-ext:ageout": "0",
+                        "frame-discard": "0",
+                        "frame-in": "0",
+                        "frame-out": "0",
+                        "tlv-unknown": "0"
+                    },
+                    "name": "Ethernet3"
+                }
+            },
+            {
+                "config": {
+                    "name": "Ethernet4"
+                },
+                "name": "Eth1/5",
+                "state": {
+                    "counters": {
+                        "openconfig-lldp-ext:ageout": "0",
+                        "frame-discard": "0",
+                        "frame-in": "0",
+                        "frame-out": "0",
+                        "tlv-unknown": "0"
+                    },
+                    "name": "Ethernet4"
+                }
+            },
+            {
+                "config": {
+                    "name": "Ethernet5"
+                },
+                "name": "Eth1/6",
+                "state": {
+                    "counters": {
+                        "openconfig-lldp-ext:ageout": "0",
+                        "frame-discard": "0",
+                        "frame-in": "0",
+                        "frame-out": "0",
+                        "tlv-unknown": "0"
+                    },
+                    "name": "Ethernet5"
+                }
+            },
+            {
+                "config": {
+                    "name": "Ethernet6"
+                },
+                "name": "Eth1/7",
+                "state": {
+                    "counters": {
+                        "openconfig-lldp-ext:ageout": "0",
+                        "frame-discard": "0",
+                        "frame-in": "0",
+                        "frame-out": "0",
+                        "tlv-unknown": "0"
+                    },
+                    "name": "Ethernet6"
+                }
+            },
+            {
+                "config": {
+                    "name": "Ethernet7"
+                },
+                "name": "Eth1/8",
+                "state": {
+                    "counters": {
+                        "openconfig-lldp-ext:ageout": "0",
+                        "frame-discard": "0",
+                        "frame-in": "0",
+                        "frame-out": "0",
+                        "tlv-unknown": "0"
+                    },
+                    "name": "Ethernet7"
+                }
+            },
+            {
+                "config": {
+                    "name": "Ethernet8"
+                },
+                "name": "Eth1/9",
+                "state": {
+                    "counters": {
+                        "openconfig-lldp-ext:ageout": "0",
+                        "frame-discard": "0",
+                        "frame-in": "0",
+                        "frame-out": "0",
+                        "tlv-unknown": "0"
+                    },
+                    "name": "Ethernet8"
+                }
+            },
+            {
+                "config": {
+                    "name": "Ethernet9"
+                },
+                "name": "Eth1/10",
+                "state": {
+                    "counters": {
+                        "openconfig-lldp-ext:ageout": "0",
+                        "frame-discard": "0",
+                        "frame-in": "0",
+                        "frame-out": "0",
+                        "tlv-unknown": "0"
+                    },
+                    "name": "Ethernet9"
+                }
+            },
+            {
+                "config": {
+                    "name": "Ethernet10"
+                },
+                "name": "Eth1/11",
+                "state": {
+                    "counters": {
+                        "openconfig-lldp-ext:ageout": "0",
+                        "frame-discard": "0",
+                        "frame-in": "0",
+                        "frame-out": "0",
+                        "tlv-unknown": "0"
+                    },
+                    "name": "Ethernet10"
+                }
+            },
+            {
+                "config": {
+                    "name": "Ethernet11"
+                },
+                "name": "Eth1/12",
+                "state": {
+                    "counters": {
+                        "openconfig-lldp-ext:ageout": "0",
+                        "frame-discard": "0",
+                        "frame-in": "0",
+                        "frame-out": "0",
+                        "tlv-unknown": "0"
+                    },
+                    "name": "Ethernet11"
+                }
+            },
+            {
+                "config": {
+                    "name": "Ethernet12"
+                },
+                "name": "Eth1/13",
+                "state": {
+                    "counters": {
+                        "openconfig-lldp-ext:ageout": "0",
+                        "frame-discard": "0",
+                        "frame-in": "0",
+                        "frame-out": "0",
+                        "tlv-unknown": "0"
+                    },
+                    "name": "Ethernet12"
+                }
+            },
+            {
+                "config": {
+                    "name": "Ethernet13"
+                },
+                "name": "Eth1/14",
+                "state": {
+                    "counters": {
+                        "openconfig-lldp-ext:ageout": "0",
+                        "frame-discard": "0",
+                        "frame-in": "0",
+                        "frame-out": "0",
+                        "tlv-unknown": "0"
+                    },
+                    "name": "Ethernet13"
+                }
+            },
+            {
+                "config": {
+                    "name": "Ethernet14"
+                },
+                "name": "Eth1/15",
+                "state": {
+                    "counters": {
+                        "openconfig-lldp-ext:ageout": "0",
+                        "frame-discard": "0",
+                        "frame-in": "0",
+                        "frame-out": "0",
+                        "tlv-unknown": "0"
+                    },
+                    "name": "Ethernet14"
+                }
+            },
+            {
+                "config": {
+                    "name": "Ethernet15"
+                },
+                "name": "Eth1/16",
+                "state": {
+                    "counters": {
+                        "openconfig-lldp-ext:ageout": "0",
+                        "frame-discard": "0",
+                        "frame-in": "0",
+                        "frame-out": "0",
+                        "tlv-unknown": "0"
+                    },
+                    "name": "Ethernet15"
+                }
+            },
+            {
+                "config": {
+                    "name": "Ethernet16"
+                },
+                "name": "Eth1/17",
+                "state": {
+                    "counters": {
+                        "openconfig-lldp-ext:ageout": "0",
+                        "frame-discard": "0",
+                        "frame-in": "0",
+                        "frame-out": "0",
+                        "tlv-unknown": "0"
+                    },
+                    "name": "Ethernet16"
+                }
+            },
+            {
+                "config": {
+                    "name": "Ethernet17"
+                },
+                "name": "Eth1/18",
+                "state": {
+                    "counters": {
+                        "openconfig-lldp-ext:ageout": "0",
+                        "frame-discard": "0",
+                        "frame-in": "0",
+                        "frame-out": "0",
+                        "tlv-unknown": "0"
+                    },
+                    "name": "Ethernet17"
+                }
+            },
+            {
+                "config": {
+                    "name": "Ethernet18"
+                },
+                "name": "Eth1/19",
+                "state": {
+                    "counters": {
+                        "openconfig-lldp-ext:ageout": "0",
+                        "frame-discard": "0",
+                        "frame-in": "0",
+                        "frame-out": "0",
+                        "tlv-unknown": "0"
+                    },
+                    "name": "Ethernet18"
+                }
+            },
+            {
+                "config": {
+                    "name": "Ethernet19"
+                },
+                "name": "Eth1/20",
+                "state": {
+                    "counters": {
+                        "openconfig-lldp-ext:ageout": "0",
+                        "frame-discard": "0",
+                        "frame-in": "0",
+                        "frame-out": "0",
+                        "tlv-unknown": "0"
+                    },
+                    "name": "Ethernet19"
+                }
+            },
+            {
+                "config": {
+                    "name": "Ethernet20"
+                },
+                "name": "Eth1/21",
+                "state": {
+                    "counters": {
+                        "openconfig-lldp-ext:ageout": "0",
+                        "frame-discard": "0",
+                        "frame-in": "0",
+                        "frame-out": "0",
+                        "tlv-unknown": "0"
+                    },
+                    "name": "Ethernet20"
+                }
+            },
+            {
+                "config": {
+                    "name": "Ethernet21"
+                },
+                "name": "Eth1/22",
+                "state": {
+                    "counters": {
+                        "openconfig-lldp-ext:ageout": "0",
+                        "frame-discard": "0",
+                        "frame-in": "0",
+                        "frame-out": "0",
+                        "tlv-unknown": "0"
+                    },
+                    "name": "Ethernet21"
+                }
+            },
+            {
+                "config": {
+                    "name": "Ethernet22"
+                },
+                "name": "Eth1/23",
+                "state": {
+                    "counters": {
+                        "openconfig-lldp-ext:ageout": "0",
+                        "frame-discard": "0",
+                        "frame-in": "0",
+                        "frame-out": "0",
+                        "tlv-unknown": "0"
+                    },
+                    "name": "Ethernet22"
+                }
+            },
+            {
+                "config": {
+                    "name": "Ethernet23"
+                },
+                "name": "Eth1/24",
+                "state": {
+                    "counters": {
+                        "openconfig-lldp-ext:ageout": "0",
+                        "frame-discard": "0",
+                        "frame-in": "0",
+                        "frame-out": "0",
+                        "tlv-unknown": "0"
+                    },
+                    "name": "Ethernet23"
+                }
+            },
+            {
+                "config": {
+                    "name": "Ethernet24"
+                },
+                "name": "Eth1/25",
+                "state": {
+                    "counters": {
+                        "openconfig-lldp-ext:ageout": "0",
+                        "frame-discard": "0",
+                        "frame-in": "0",
+                        "frame-out": "0",
+                        "tlv-unknown": "0"
+                    },
+                    "name": "Ethernet24"
+                }
+            },
+            {
+                "config": {
+                    "name": "Ethernet25"
+                },
+                "name": "Eth1/26",
+                "state": {
+                    "counters": {
+                        "openconfig-lldp-ext:ageout": "0",
+                        "frame-discard": "0",
+                        "frame-in": "0",
+                        "frame-out": "0",
+                        "tlv-unknown": "0"
+                    },
+                    "name": "Ethernet25"
+                }
+            },
+            {
+                "config": {
+                    "name": "Ethernet26"
+                },
+                "name": "Eth1/27",
+                "state": {
+                    "counters": {
+                        "openconfig-lldp-ext:ageout": "0",
+                        "frame-discard": "0",
+                        "frame-in": "0",
+                        "frame-out": "0",
+                        "tlv-unknown": "0"
+                    },
+                    "name": "Ethernet26"
+                }
+            },
+            {
+                "config": {
+                    "name": "Ethernet27"
+                },
+                "name": "Eth1/28",
+                "state": {
+                    "counters": {
+                        "openconfig-lldp-ext:ageout": "0",
+                        "frame-discard": "0",
+                        "frame-in": "0",
+                        "frame-out": "0",
+                        "tlv-unknown": "0"
+                    },
+                    "name": "Ethernet27"
+                }
+            },
+            {
+                "config": {
+                    "name": "Ethernet28"
+                },
+                "name": "Eth1/29",
+                "state": {
+                    "counters": {
+                        "openconfig-lldp-ext:ageout": "0",
+                        "frame-discard": "0",
+                        "frame-in": "0",
+                        "frame-out": "0",
+                        "tlv-unknown": "0"
+                    },
+                    "name": "Ethernet28"
+                }
+            },
+            {
+                "config": {
+                    "name": "Ethernet29"
+                },
+                "name": "Eth1/30",
+                "state": {
+                    "counters": {
+                        "openconfig-lldp-ext:ageout": "0",
+                        "frame-discard": "0",
+                        "frame-in": "0",
+                        "frame-out": "0",
+                        "tlv-unknown": "0"
+                    },
+                    "name": "Ethernet29"
+                }
+            },
+            {
+                "config": {
+                    "name": "Ethernet30"
+                },
+                "name": "Eth1/31",
+                "state": {
+                    "counters": {
+                        "openconfig-lldp-ext:ageout": "0",
+                        "frame-discard": "0",
+                        "frame-in": "0",
+                        "frame-out": "0",
+                        "tlv-unknown": "0"
+                    },
+                    "name": "Ethernet30"
+                }
+            },
+            {
+                "config": {
+                    "name": "Ethernet31"
+                },
+                "name": "Eth1/32",
+                "state": {
+                    "counters": {
+                        "openconfig-lldp-ext:ageout": "0",
+                        "frame-discard": "0",
+                        "frame-in": "0",
+                        "frame-out": "0",
+                        "tlv-unknown": "0"
+                    },
+                    "name": "Ethernet31"
+                }
+            },
+            {
+                "config": {
+                    "name": "Ethernet32"
+                },
+                "name": "Eth1/33",
+                "state": {
+                    "counters": {
+                        "openconfig-lldp-ext:ageout": "0",
+                        "frame-discard": "0",
+                        "frame-in": "0",
+                        "frame-out": "0",
+                        "tlv-unknown": "0"
+                    },
+                    "name": "Ethernet32"
+                }
+            },
+            {
+                "config": {
+                    "name": "Ethernet33"
+                },
+                "name": "Eth1/34",
+                "state": {
+                    "counters": {
+                        "openconfig-lldp-ext:ageout": "0",
+                        "frame-discard": "0",
+                        "frame-in": "0",
+                        "frame-out": "0",
+                        "tlv-unknown": "0"
+                    },
+                    "name": "Ethernet33"
+                }
+            },
+            {
+                "config": {
+                    "name": "Ethernet34"
+                },
+                "name": "Eth1/35",
+                "state": {
+                    "counters": {
+                        "openconfig-lldp-ext:ageout": "0",
+                        "frame-discard": "0",
+                        "frame-in": "0",
+                        "frame-out": "0",
+                        "tlv-unknown": "0"
+                    },
+                    "name": "Ethernet34"
+                }
+            },
+            {
+                "config": {
+                    "name": "Ethernet35"
+                },
+                "name": "Eth1/36",
+                "state": {
+                    "counters": {
+                        "openconfig-lldp-ext:ageout": "0",
+                        "frame-discard": "0",
+                        "frame-in": "0",
+                        "frame-out": "0",
+                        "tlv-unknown": "0"
+                    },
+                    "name": "Ethernet35"
+                }
+            },
+            {
+                "config": {
+                    "name": "Ethernet36"
+                },
+                "name": "Eth1/37",
+                "state": {
+                    "counters": {
+                        "openconfig-lldp-ext:ageout": "0",
+                        "frame-discard": "0",
+                        "frame-in": "0",
+                        "frame-out": "0",
+                        "tlv-unknown": "0"
+                    },
+                    "name": "Ethernet36"
+                }
+            },
+            {
+                "config": {
+                    "name": "Ethernet37"
+                },
+                "name": "Eth1/38",
+                "state": {
+                    "counters": {
+                        "openconfig-lldp-ext:ageout": "0",
+                        "frame-discard": "0",
+                        "frame-in": "0",
+                        "frame-out": "0",
+                        "tlv-unknown": "0"
+                    },
+                    "name": "Ethernet37"
+                }
+            },
+            {
+                "config": {
+                    "name": "Ethernet38"
+                },
+                "name": "Eth1/39",
+                "state": {
+                    "counters": {
+                        "openconfig-lldp-ext:ageout": "0",
+                        "frame-discard": "0",
+                        "frame-in": "0",
+                        "frame-out": "0",
+                        "tlv-unknown": "0"
+                    },
+                    "name": "Ethernet38"
+                }
+            },
+            {
+                "config": {
+                    "name": "Ethernet39"
+                },
+                "name": "Eth1/40",
+                "state": {
+                    "counters": {
+                        "openconfig-lldp-ext:ageout": "0",
+                        "frame-discard": "0",
+                        "frame-in": "0",
+                        "frame-out": "0",
+                        "tlv-unknown": "0"
+                    },
+                    "name": "Ethernet39"
+                }
+            },
+            {
+                "config": {
+                    "name": "Ethernet40"
+                },
+                "name": "Eth1/41",
+                "state": {
+                    "counters": {
+                        "openconfig-lldp-ext:ageout": "0",
+                        "frame-discard": "0",
+                        "frame-in": "0",
+                        "frame-out": "0",
+                        "tlv-unknown": "0"
+                    },
+                    "name": "Ethernet40"
+                }
+            },
+            {
+                "config": {
+                    "name": "Ethernet41"
+                },
+                "name": "Eth1/42",
+                "state": {
+                    "counters": {
+                        "openconfig-lldp-ext:ageout": "0",
+                        "frame-discard": "0",
+                        "frame-in": "0",
+                        "frame-out": "0",
+                        "tlv-unknown": "0"
+                    },
+                    "name": "Ethernet41"
+                }
+            },
+            {
+                "config": {
+                    "name": "Ethernet42"
+                },
+                "name": "Eth1/43",
+                "state": {
+                    "counters": {
+                        "openconfig-lldp-ext:ageout": "0",
+                        "frame-discard": "0",
+                        "frame-in": "0",
+                        "frame-out": "0",
+                        "tlv-unknown": "0"
+                    },
+                    "name": "Ethernet42"
+                }
+            },
+            {
+                "config": {
+                    "name": "Ethernet43"
+                },
+                "name": "Eth1/44",
+                "state": {
+                    "counters": {
+                        "openconfig-lldp-ext:ageout": "0",
+                        "frame-discard": "0",
+                        "frame-in": "0",
+                        "frame-out": "0",
+                        "tlv-unknown": "0"
+                    },
+                    "name": "Ethernet43"
+                }
+            },
+            {
+                "config": {
+                    "name": "Ethernet44"
+                },
+                "name": "Eth1/45",
+                "state": {
+                    "counters": {
+                        "openconfig-lldp-ext:ageout": "0",
+                        "frame-discard": "0",
+                        "frame-in": "0",
+                        "frame-out": "0",
+                        "tlv-unknown": "0"
+                    },
+                    "name": "Ethernet44"
+                }
+            },
+            {
+                "config": {
+                    "name": "Ethernet45"
+                },
+                "name": "Eth1/46",
+                "state": {
+                    "counters": {
+                        "openconfig-lldp-ext:ageout": "0",
+                        "frame-discard": "0",
+                        "frame-in": "0",
+                        "frame-out": "0",
+                        "tlv-unknown": "0"
+                    },
+                    "name": "Ethernet45"
+                }
+            },
+            {
+                "config": {
+                    "name": "Ethernet46"
+                },
+                "name": "Eth1/47",
+                "state": {
+                    "counters": {
+                        "openconfig-lldp-ext:ageout": "0",
+                        "frame-discard": "0",
+                        "frame-in": "0",
+                        "frame-out": "0",
+                        "tlv-unknown": "0"
+                    },
+                    "name": "Ethernet46"
+                }
+            },
+            {
+                "config": {
+                    "name": "Ethernet47"
+                },
+                "name": "Eth1/48",
+                "state": {
+                    "counters": {
+                        "openconfig-lldp-ext:ageout": "0",
+                        "frame-discard": "0",
+                        "frame-in": "0",
+                        "frame-out": "0",
+                        "tlv-unknown": "0"
+                    },
+                    "name": "Ethernet47"
+                }
+            },
+            {
+                "config": {
+                    "name": "Ethernet48"
+                },
+                "name": "Eth1/49",
+                "state": {
+                    "counters": {
+                        "openconfig-lldp-ext:ageout": "0",
+                        "frame-discard": "0",
+                        "frame-in": "0",
+                        "frame-out": "0",
+                        "tlv-unknown": "0"
+                    },
+                    "name": "Ethernet48"
+                }
+            },
+            {
+                "config": {
+                    "name": "Ethernet52"
+                },
+                "name": "Eth1/50",
+                "state": {
+                    "counters": {
+                        "openconfig-lldp-ext:ageout": "0",
+                        "frame-discard": "0",
+                        "frame-in": "0",
+                        "frame-out": "0",
+                        "tlv-unknown": "0"
+                    },
+                    "name": "Ethernet52"
+                }
+            },
+            {
+                "config": {
+                    "name": "Ethernet56"
+                },
+                "name": "Eth1/51",
+                "state": {
+                    "counters": {
+                        "openconfig-lldp-ext:ageout": "0",
+                        "frame-discard": "0",
+                        "frame-in": "0",
+                        "frame-out": "0",
+                        "tlv-unknown": "0"
+                    },
+                    "name": "Ethernet56"
+                }
+            },
+            {
+                "config": {
+                    "name": "Ethernet60"
+                },
+                "name": "Eth1/52",
+                "state": {
+                    "counters": {
+                        "openconfig-lldp-ext:ageout": "0",
+                        "frame-discard": "0",
+                        "frame-in": "0",
+                        "frame-out": "0",
+                        "tlv-unknown": "0"
+                    },
+                    "name": "Ethernet60"
+                }
+            },
+            {
+                "config": {
+                    "name": "Ethernet64"
+                },
+                "name": "Eth1/53",
+                "state": {
+                    "counters": {
+                        "openconfig-lldp-ext:ageout": "0",
+                        "frame-discard": "0",
+                        "frame-in": "0",
+                        "frame-out": "0",
+                        "tlv-unknown": "0"
+                    },
+                    "name": "Ethernet64"
+                }
+            },
+            {
+                "config": {
+                    "name": "Ethernet68"
+                },
+                "name": "Eth1/54",
+                "state": {
+                    "counters": {
+                        "openconfig-lldp-ext:ageout": "0",
+                        "frame-discard": "0",
+                        "frame-in": "0",
+                        "frame-out": "0",
+                        "tlv-unknown": "0"
+                    },
+                    "name": "Ethernet68"
+                }
+            },
+            {
+                "config": {
+                    "name": "Ethernet72"
+                },
+                "name": "Eth1/55",
+                "state": {
+                    "counters": {
+                        "openconfig-lldp-ext:ageout": "0",
+                        "frame-discard": "0",
+                        "frame-in": "0",
+                        "frame-out": "0",
+                        "tlv-unknown": "0"
+                    },
+                    "name": "Ethernet72"
+                }
+            },
+            {
+                "config": {
+                    "name": "Ethernet76"
+                },
+                "name": "Eth1/56",
+                "state": {
+                    "counters": {
+                        "openconfig-lldp-ext:ageout": "0",
+                        "frame-discard": "0",
+                        "frame-in": "0",
+                        "frame-out": "0",
+                        "tlv-unknown": "0"
+                    },
+                    "name": "Ethernet76"
+                }
+            },
+            {
+                "config": {
+                    "name": "eth0"
+                },
+                "name": "Management0",
+                "neighbors": {
+                    "neighbor": [
+                        {
+                            "capabilities": {
+                                "capability": [
+                                    {
+                                        "name": "openconfig-lldp-types:ROUTER",
+                                        "state": {
+                                            "enabled": true,
+                                            "name": "openconfig-lldp-types:ROUTER"
+                                        }
+                                    }
+                                ]
+                            },
+                            "custom-tlvs": {
+                                "tlv": [
+                                    {
+                                        "oui": "0080C2",
+                                        "oui-subtype": "7",
+                                        "state": {
+                                            "oui": "0080C2",
+                                            "oui-subtype": "7",
+                                            "type": 127,
+                                            "value": "MA=="
+                                        },
+                                        "type": 127
+                                    },
+                                    {
+                                        "oui": "00120F",
+                                        "oui-subtype": "4",
+                                        "state": {
+                                            "oui": "00120F",
+                                            "oui-subtype": "4",
+                                            "type": 127,
+                                            "value": "MTUwMA=="
+                                        },
+                                        "type": 127
+                                    }
+                                ]
+                            },
+                            "id": "Management0",
+                            "openconfig-lldp-ext:med": {
+                                "capabilities": {
+                                    "capability": [
+                                        {
+                                            "name": "openconfig-lldp-ext:EXT_MDI_POWER_PD",
+                                            "state": {
+                                                "enabled": true,
+                                                "name": "openconfig-lldp-ext:EXT_MDI_POWER_PD"
+                                            }
+                                        },
+                                        {
+                                            "name": "openconfig-lldp-ext:INVENTORY",
+                                            "state": {
+                                                "enabled": true,
+                                                "name": "openconfig-lldp-ext:INVENTORY"
+                                            }
+                                        },
+                                        {
+                                            "name": "openconfig-lldp-ext:NETWORK_POLICY",
+                                            "state": {
+                                                "enabled": true,
+                                                "name": "openconfig-lldp-ext:NETWORK_POLICY"
+                                            }
+                                        }
+                                    ]
+                                },
+                                "state": {
+                                    "device-class": "NETWORK_CONNECTIVITY",
+                                    "inventory": {
+                                        "asset-id": "",
+                                        "firmware-revision": "1.16.3-debian-1.16.3-2",
+                                        "hardware-revision": "pc-i440fx-noble-v2",
+                                        "manufacturer": "QEMU",
+                                        "model": "Ubuntu 24.04 PC v2 (i440FX + PII",
+                                        "serial-number": "",
+                                        "software-revision": "5.10.0-21-amd64"
+                                    }
+                                }
+                            },
+                            "state": {
+                                "chassis-id": "0c:03:cb:37:00:00",
+                                "chassis-id-type": "MAC_ADDRESS",
+                                "id": "3",
+                                "management-address": "192.168.70.174,2600:1700:6b90:10df::104f",
+                                "port-description": "eth0",
+                                "port-id": "0c:03:cb:37:00:00",
+                                "port-id-type": "MAC_ADDRESS",
+                                "system-description": "SONiC Software Version: SONiC.4.4.2-Enterprise_Base - HwSku: DellEMC-S5248f-P-25G-DPB - Distribution: Debian 11.11 - Kernel: 5.10.0-21-amd64",
+                                "system-name": "leaf2",
+                                "ttl": 120
+                            }
+                        }
+                    ]
+                },
+                "state": {
+                    "counters": {
+                        "openconfig-lldp-ext:ageout": "0",
+                        "frame-discard": "0",
+                        "frame-in": "60",
+                        "frame-out": "18",
+                        "tlv-unknown": "2"
+                    },
+                    "name": "eth0"
+                }
+            }
+        ]
+    }
+}

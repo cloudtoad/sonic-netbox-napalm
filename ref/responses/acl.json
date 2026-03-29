@@ -1,0 +1,10 @@
+{
+    "openconfig-acl:acl": {
+        "config": {
+            "openconfig-acl-ext:counter-capability": "openconfig-acl:AGGREGATE_ONLY"
+        },
+        "state": {
+            "counter-capability": "openconfig-acl:AGGREGATE_ONLY"
+        }
+    }
+}

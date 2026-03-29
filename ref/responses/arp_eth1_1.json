@@ -1,0 +1,15 @@
+{
+    "openconfig-if-ip:neighbors": {
+        "neighbor": [
+            {
+                "ip": "10.1.0.1",
+                "state": {
+                    "ip": "10.1.0.1",
+                    "link-layer-address": "0c:03:cb:37:00:0a",
+                    "origin": "DYNAMIC",
+                    "openconfig-interfaces-ext:remote": 0
+                }
+            }
+        ]
+    }
+}

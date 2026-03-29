@@ -1,0 +1,65 @@
+{
+    "openconfig-network-instance:entries": {
+        "entry": [
+            {
+                "config": {
+                    "mac-address": "0c:03:cb:37:00:02",
+                    "vlan": 100
+                },
+                "mac-address": "0c:03:cb:37:00:02",
+                "openconfig-vxlan:peer": {
+                    "state": {
+                        "peer-ip": "10.0.0.2"
+                    }
+                },
+                "state": {
+                    "entry-type": "DYNAMIC",
+                    "mac-address": "0c:03:cb:37:00:02",
+                    "vlan": 100
+                },
+                "vlan": 100
+            },
+            {
+                "config": {
+                    "mac-address": "0c:8e:13:20:00:01",
+                    "vlan": 100
+                },
+                "mac-address": "0c:8e:13:20:00:01",
+                "openconfig-vxlan:peer": {
+                    "state": {
+                        "peer-ip": "10.0.0.2"
+                    }
+                },
+                "state": {
+                    "entry-type": "DYNAMIC",
+                    "mac-address": "0c:8e:13:20:00:01",
+                    "vlan": 100
+                },
+                "vlan": 100
+            },
+            {
+                "config": {
+                    "mac-address": "0c:91:66:5d:00:01",
+                    "vlan": 100
+                },
+                "interface": {
+                    "interface-ref": {
+                        "config": {
+                            "interface": "Eth1/2"
+                        },
+                        "state": {
+                            "interface": "Eth1/2"
+                        }
+                    }
+                },
+                "mac-address": "0c:91:66:5d:00:01",
+                "state": {
+                    "entry-type": "DYNAMIC",
+                    "mac-address": "0c:91:66:5d:00:01",
+                    "vlan": 100
+                },
+                "vlan": 100
+            }
+        ]
+    }
+}

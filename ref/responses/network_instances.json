@@ -1,0 +1,1049 @@
+{
+    "openconfig-network-instance:network-instances": {
+        "network-instance": [
+            {
+                "config": {
+                    "enabled": true,
+                    "name": "Vlan100",
+                    "type": "openconfig-network-instance-types:L2L3"
+                },
+                "fdb": {
+                    "config": {
+                        "mac-aging-time": 600
+                    },
+                    "mac-table": {
+                        "entries": {
+                            "entry": [
+                                {
+                                    "config": {
+                                        "mac-address": "0c:03:cb:37:00:02",
+                                        "vlan": 100
+                                    },
+                                    "mac-address": "0c:03:cb:37:00:02",
+                                    "openconfig-vxlan:peer": {
+                                        "state": {
+                                            "peer-ip": "10.0.0.2"
+                                        }
+                                    },
+                                    "state": {
+                                        "entry-type": "DYNAMIC",
+                                        "mac-address": "0c:03:cb:37:00:02",
+                                        "vlan": 100
+                                    },
+                                    "vlan": 100
+                                },
+                                {
+                                    "config": {
+                                        "mac-address": "0c:8e:13:20:00:01",
+                                        "vlan": 100
+                                    },
+                                    "mac-address": "0c:8e:13:20:00:01",
+                                    "openconfig-vxlan:peer": {
+                                        "state": {
+                                            "peer-ip": "10.0.0.2"
+                                        }
+                                    },
+                                    "state": {
+                                        "entry-type": "DYNAMIC",
+                                        "mac-address": "0c:8e:13:20:00:01",
+                                        "vlan": 100
+                                    },
+                                    "vlan": 100
+                                },
+                                {
+                                    "config": {
+                                        "mac-address": "0c:91:66:5d:00:01",
+                                        "vlan": 100
+                                    },
+                                    "interface": {
+                                        "interface-ref": {
+                                            "config": {
+                                                "interface": "Eth1/2"
+                                            },
+                                            "state": {
+                                                "interface": "Eth1/2"
+                                            }
+                                        }
+                                    },
+                                    "mac-address": "0c:91:66:5d:00:01",
+                                    "state": {
+                                        "entry-type": "DYNAMIC",
+                                        "mac-address": "0c:91:66:5d:00:01",
+                                        "vlan": 100
+                                    },
+                                    "vlan": 100
+                                }
+                            ]
+                        }
+                    },
+                    "state": {
+                        "dynamic-count": 3,
+                        "mac-aging-time": 600,
+                        "static-count": 0
+                    }
+                },
+                "openconfig-mac-dampening:mac-dampening": {
+                    "config": {
+                        "interval": 5,
+                        "threshold": 5
+                    }
+                },
+                "name": "Vlan100",
+                "protocols": {
+                    "protocol": [
+                        {
+                            "config": {
+                                "identifier": "openconfig-network-instance-deviation:IGMP_SNOOPING",
+                                "name": "IGMP-SNOOPING"
+                            },
+                            "identifier": "openconfig-network-instance-deviation:IGMP_SNOOPING",
+                            "name": "IGMP-SNOOPING",
+                            "state": {
+                                "identifier": "openconfig-network-instance-deviation:IGMP_SNOOPING",
+                                "name": "IGMP-SNOOPING"
+                            }
+                        }
+                    ]
+                },
+                "state": {
+                    "enabled": true,
+                    "name": "Vlan100",
+                    "type": "openconfig-network-instance-types:L2L3"
+                },
+                "vlans": {
+                    "vlan": [
+                        {
+                            "config": {
+                                "autostate": "ENABLE",
+                                "name": "Vlan100",
+                                "vlan-id": 100
+                            },
+                            "members": {
+                                "member": [
+                                    {
+                                        "dynamic": "no",
+                                        "state": {
+                                            "interface": "Eth1/2"
+                                        },
+                                        "tagging_mode": "untagged"
+                                    }
+                                ]
+                            },
+                            "state": {
+                                "autostate": "ENABLE",
+                                "name": "Vlan100",
+                                "vlan-id": 100
+                            },
+                            "vlan-id": 100
+                        }
+                    ]
+                },
+                "openconfig-vxlan:vxlan-vni-instances": {
+                    "vni-instance": [
+                        {
+                            "config": {
+                                "source-nve": "vtep1",
+                                "vni-id": 10100
+                            },
+                            "source-nve": "vtep1",
+                            "state": {
+                                "source-nve": "vtep1",
+                                "vni-id": 10100
+                            },
+                            "vni-id": 10100
+                        }
+                    ]
+                }
+            },
+            {
+                "afts": {
+                    "ipv4-unicast": {
+                        "ipv4-entry": [
+                            {
+                                "openconfig-aft-deviation:next-hops": {
+                                    "next-hop": [
+                                        {
+                                            "index": "1",
+                                            "interface-ref": {
+                                                "state": {
+                                                    "interface": "Loopback0"
+                                                }
+                                            },
+                                            "state": {
+                                                "directly-connected": true,
+                                                "index": "1"
+                                            }
+                                        }
+                                    ]
+                                },
+                                "prefix": "10.0.0.1/32",
+                                "state": {
+                                    "distance": 0,
+                                    "metric": 0,
+                                    "nhg-id": 7,
+                                    "origin-protocol": "openconfig-policy-types:DIRECTLY_CONNECTED",
+                                    "prefix": "10.0.0.1/32",
+                                    "uptime": "00:08:32"
+                                }
+                            },
+                            {
+                                "openconfig-aft-deviation:next-hops": {
+                                    "next-hop": [
+                                        {
+                                            "index": "1",
+                                            "interface-ref": {
+                                                "state": {
+                                                    "interface": "Eth1/1"
+                                                }
+                                            },
+                                            "state": {
+                                                "index": "1",
+                                                "ip-address": "10.1.0.1"
+                                            }
+                                        }
+                                    ]
+                                },
+                                "prefix": "10.0.0.2/32",
+                                "state": {
+                                    "distance": 20,
+                                    "metric": 0,
+                                    "nhg-id": 12,
+                                    "origin-protocol": "openconfig-policy-types:BGP",
+                                    "prefix": "10.0.0.2/32",
+                                    "uptime": "00:08:11"
+                                }
+                            },
+                            {
+                                "openconfig-aft-deviation:next-hops": {
+                                    "next-hop": [
+                                        {
+                                            "index": "1",
+                                            "interface-ref": {
+                                                "state": {
+                                                    "interface": "Eth1/1"
+                                                }
+                                            },
+                                            "state": {
+                                                "directly-connected": true,
+                                                "index": "1"
+                                            }
+                                        }
+                                    ]
+                                },
+                                "prefix": "10.1.0.0/31",
+                                "state": {
+                                    "distance": 0,
+                                    "metric": 0,
+                                    "nhg-id": 6,
+                                    "origin-protocol": "openconfig-policy-types:DIRECTLY_CONNECTED",
+                                    "prefix": "10.1.0.0/31",
+                                    "uptime": "00:08:32"
+                                }
+                            }
+                        ]
+                    },
+                    "ipv6-unicast": {
+                        "ipv6-entry": [
+                            {
+                                "openconfig-aft-deviation:next-hops": {
+                                    "next-hop": [
+                                        {
+                                            "index": "1",
+                                            "interface-ref": {
+                                                "state": {
+                                                    "interface": "docker0"
+                                                }
+                                            },
+                                            "state": {
+                                                "directly-connected": true,
+                                                "index": "1"
+                                            }
+                                        }
+                                    ]
+                                },
+                                "prefix": "fd00::/80",
+                                "state": {
+                                    "distance": 0,
+                                    "metric": 1024,
+                                    "origin-protocol": "openconfig-policy-types-ext:SYS_KERNEL",
+                                    "prefix": "fd00::/80",
+                                    "uptime": "00:08:32"
+                                }
+                            },
+                            {
+                                "openconfig-aft-deviation:next-hops": {
+                                    "next-hop": [
+                                        {
+                                            "index": "1",
+                                            "interface-ref": {
+                                                "state": {
+                                                    "interface": "eth1"
+                                                }
+                                            },
+                                            "state": {
+                                                "directly-connected": true,
+                                                "index": "1"
+                                            }
+                                        }
+                                    ]
+                                },
+                                "prefix": "fe80::/64",
+                                "state": {
+                                    "distance": 0,
+                                    "metric": 0,
+                                    "origin-protocol": "openconfig-policy-types:DIRECTLY_CONNECTED",
+                                    "prefix": "fe80::/64",
+                                    "uptime": "00:08:32"
+                                }
+                            }
+                        ]
+                    }
+                },
+                "config": {
+                    "enabled": true,
+                    "name": "default",
+                    "type": "openconfig-network-instance-types:DEFAULT_INSTANCE"
+                },
+                "fdb": {
+                    "config": {
+                        "mac-aging-time": 600
+                    },
+                    "mac-table": {
+                        "entries": {
+                            "entry": [
+                                {
+                                    "config": {
+                                        "mac-address": "0c:03:cb:37:00:02",
+                                        "vlan": 100
+                                    },
+                                    "mac-address": "0c:03:cb:37:00:02",
+                                    "openconfig-vxlan:peer": {
+                                        "state": {
+                                            "peer-ip": "10.0.0.2"
+                                        }
+                                    },
+                                    "state": {
+                                        "entry-type": "DYNAMIC",
+                                        "mac-address": "0c:03:cb:37:00:02",
+                                        "vlan": 100
+                                    },
+                                    "vlan": 100
+                                },
+                                {
+                                    "config": {
+                                        "mac-address": "0c:8e:13:20:00:01",
+                                        "vlan": 100
+                                    },
+                                    "mac-address": "0c:8e:13:20:00:01",
+                                    "openconfig-vxlan:peer": {
+                                        "state": {
+                                            "peer-ip": "10.0.0.2"
+                                        }
+                                    },
+                                    "state": {
+                                        "entry-type": "DYNAMIC",
+                                        "mac-address": "0c:8e:13:20:00:01",
+                                        "vlan": 100
+                                    },
+                                    "vlan": 100
+                                },
+                                {
+                                    "config": {
+                                        "mac-address": "0c:91:66:5d:00:01",
+                                        "vlan": 100
+                                    },
+                                    "interface": {
+                                        "interface-ref": {
+                                            "config": {
+                                                "interface": "Eth1/2"
+                                            },
+                                            "state": {
+                                                "interface": "Eth1/2"
+                                            }
+                                        }
+                                    },
+                                    "mac-address": "0c:91:66:5d:00:01",
+                                    "state": {
+                                        "entry-type": "DYNAMIC",
+                                        "mac-address": "0c:91:66:5d:00:01",
+                                        "vlan": 100
+                                    },
+                                    "vlan": 100
+                                }
+                            ]
+                        }
+                    },
+                    "state": {
+                        "dynamic-count": 3,
+                        "mac-aging-time": 600,
+                        "static-count": 0
+                    }
+                },
+                "interfaces": {
+                    "interface": [
+                        {
+                            "id": "Eth1/1",
+                            "state": {
+                                "id": "Eth1/1",
+                                "interface": "Eth1/1"
+                            }
+                        },
+                        {
+                            "id": "Loopback0",
+                            "state": {
+                                "id": "Loopback0",
+                                "interface": "Loopback0"
+                            }
+                        }
+                    ]
+                },
+                "openconfig-mac-dampening:mac-dampening": {
+                    "config": {
+                        "interval": 5,
+                        "threshold": 5
+                    },
+                    "state": {
+                        "interval": 5,
+                        "threshold": 5
+                    }
+                },
+                "name": "default",
+                "protocols": {
+                    "protocol": [
+                        {
+                            "bgp": {
+                                "global": {
+                                    "afi-safis": {
+                                        "afi-safi": [
+                                            {
+                                                "afi-safi-name": "openconfig-bgp-types:IPV4_UNICAST",
+                                                "config": {
+                                                    "afi-safi-name": "openconfig-bgp-types:IPV4_UNICAST"
+                                                },
+                                                "state": {
+                                                    "afi-safi-name": "openconfig-bgp-types:IPV4_UNICAST"
+                                                }
+                                            },
+                                            {
+                                                "afi-safi-name": "openconfig-bgp-types:L2VPN_EVPN",
+                                                "config": {
+                                                    "afi-safi-name": "openconfig-bgp-types:L2VPN_EVPN"
+                                                },
+                                                "l2vpn-evpn": {
+                                                    "openconfig-bgp-evpn-ext:config": {
+                                                        "advertise-all-vni": true
+                                                    },
+                                                    "openconfig-bgp-evpn-ext:state": {
+                                                        "advertise-all-vni": true
+                                                    },
+                                                    "openconfig-bgp-evpn-ext:vnis": {
+                                                        "vni": [
+                                                            {
+                                                                "config": {
+                                                                    "vni-number": 10100
+                                                                },
+                                                                "state": {
+                                                                    "advertise-default-gw": false,
+                                                                    "advertise-svi-ip": false,
+                                                                    "export-rts": [
+                                                                        "65001:10100"
+                                                                    ],
+                                                                    "external-ip": "0.0.0.0",
+                                                                    "import-rts": [
+                                                                        "65001:10100"
+                                                                    ],
+                                                                    "is-live": true,
+                                                                    "mcast-group": "0.0.0.0",
+                                                                    "originator": "10.0.0.1",
+                                                                    "route-distinguisher": "10.0.0.1:100",
+                                                                    "type": "L2",
+                                                                    "vni-number": 10100
+                                                                },
+                                                                "vni-number": 10100
+                                                            }
+                                                        ]
+                                                    }
+                                                },
+                                                "state": {
+                                                    "afi-safi-name": "openconfig-bgp-types:L2VPN_EVPN"
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    "config": {
+                                        "as": 65001,
+                                        "ebgp-requires-policy": false,
+                                        "router-id": "10.0.0.1"
+                                    },
+                                    "state": {
+                                        "as": 65001,
+                                        "ebgp-requires-policy": false,
+                                        "router-id": "10.0.0.1"
+                                    }
+                                },
+                                "neighbors": {
+                                    "neighbor": [
+                                        {
+                                            "afi-safis": {
+                                                "afi-safi": [
+                                                    {
+                                                        "afi-safi-name": "openconfig-bgp-types:IPV4_UNICAST",
+                                                        "config": {
+                                                            "afi-safi-name": "openconfig-bgp-types:IPV4_UNICAST",
+                                                            "enabled": true
+                                                        },
+                                                        "state": {
+                                                            "active": true,
+                                                            "afi-safi-name": "openconfig-bgp-types:IPV4_UNICAST",
+                                                            "enabled": true,
+                                                            "prefixes": {
+                                                                "received": 2,
+                                                                "sent": 3
+                                                            }
+                                                        }
+                                                    },
+                                                    {
+                                                        "afi-safi-name": "openconfig-bgp-types:L2VPN_EVPN",
+                                                        "config": {
+                                                            "afi-safi-name": "openconfig-bgp-types:L2VPN_EVPN",
+                                                            "enabled": true
+                                                        },
+                                                        "state": {
+                                                            "active": true,
+                                                            "afi-safi-name": "openconfig-bgp-types:L2VPN_EVPN",
+                                                            "enabled": true,
+                                                            "prefixes": {
+                                                                "received": 3,
+                                                                "sent": 6
+                                                            }
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            "config": {
+                                                "enabled": true,
+                                                "neighbor-address": "10.1.0.1",
+                                                "peer-as": 65002
+                                            },
+                                            "neighbor-address": "10.1.0.1",
+                                            "state": {
+                                                "connections-dropped": "0",
+                                                "dynamically-configured": false,
+                                                "enabled": true,
+                                                "established-transitions": "1",
+                                                "host-name-cap": {
+                                                    "hostname-advertised": "leaf1",
+                                                    "hostname-received": "leaf2"
+                                                },
+                                                "last-established": "492",
+                                                "last-read": "12",
+                                                "last-reset-reason": "No AFI/SAFI activated for peer",
+                                                "last-reset-time": "506",
+                                                "last-write": "12",
+                                                "local-as": 65001,
+                                                "messages": {
+                                                    "received": {
+                                                        "CAPABILITY": "0",
+                                                        "KEEPALIVE": "9",
+                                                        "NOTIFICATION": "0",
+                                                        "OPEN": "1",
+                                                        "ROUTE-REFRESH": "0",
+                                                        "UPDATE": "10"
+                                                    },
+                                                    "sent": {
+                                                        "CAPABILITY": "0",
+                                                        "KEEPALIVE": "9",
+                                                        "NOTIFICATION": "0",
+                                                        "OPEN": "1",
+                                                        "ROUTE-REFRESH": "0",
+                                                        "UPDATE": "10"
+                                                    }
+                                                },
+                                                "neighbor-address": "10.1.0.1",
+                                                "peer-as": 65002,
+                                                "peer-port": 54574,
+                                                "queues": {
+                                                    "input": 0,
+                                                    "output": 0
+                                                },
+                                                "remote-router-id": "10.0.0.2",
+                                                "session-state": "ESTABLISHED",
+                                                "supported-capabilities": [
+                                                    "openconfig-bgp-types:ASN32",
+                                                    "openconfig-bgp-types:EXTENDMSG",
+                                                    "openconfig-bgp-types:ADD_PATHS",
+                                                    "openconfig-bgp-types:ROUTE_REFRESH",
+                                                    "openconfig-bgp-types:MPBGP",
+                                                    "openconfig-bgp-types:GRACEFUL_RESTART",
+                                                    "openconfig-bgp-types:HOSTNAME_ADVERTISED_ONLY",
+                                                    "openconfig-bgp-types:HOSTNAME_RECEIVED_ONLY"
+                                                ]
+                                            },
+                                            "timers": {
+                                                "state": {
+                                                    "connect-retry": 30,
+                                                    "keepalive-interval": 60,
+                                                    "minimum-advertisement-interval": 0,
+                                                    "negotiated-hold-time": 180
+                                                }
+                                            },
+                                            "transport": {
+                                                "state": {
+                                                    "local-address": "10.1.0.0",
+                                                    "local-port": 179,
+                                                    "remote-address": "10.1.0.1",
+                                                    "remote-port": 54574
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                "rib": {
+                                    "afi-safis": {
+                                        "afi-safi": [
+                                            {
+                                                "afi-safi-name": "openconfig-bgp-types:IPV4_UNICAST",
+                                                "ipv4-unicast": {
+                                                    "loc-rib": {
+                                                        "routes": {
+                                                            "route": [
+                                                                {
+                                                                    "openconfig-bgp-deviation:attr-sets": {
+                                                                        "state": {
+                                                                            "next-hop": "0.0.0.0",
+                                                                            "origin": "INCOMPLETE"
+                                                                        }
+                                                                    },
+                                                                    "origin": "0.0.0.0",
+                                                                    "path-id": 0,
+                                                                    "prefix": "10.0.0.1/32",
+                                                                    "state": {
+                                                                        "best-path": true,
+                                                                        "last-modified": "1774803267",
+                                                                        "origin": "0.0.0.0",
+                                                                        "path-id": 0,
+                                                                        "prefix": "10.0.0.1/32",
+                                                                        "valid-route": true
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "openconfig-bgp-deviation:attr-sets": {
+                                                                        "as-path": {
+                                                                            "as-segment": [
+                                                                                {
+                                                                                    "state": {
+                                                                                        "member": [
+                                                                                            65002
+                                                                                        ],
+                                                                                        "type": "AS_SEQ"
+                                                                                    }
+                                                                                }
+                                                                            ]
+                                                                        },
+                                                                        "state": {
+                                                                            "next-hop": "10.1.0.1",
+                                                                            "origin": "INCOMPLETE"
+                                                                        }
+                                                                    },
+                                                                    "origin": "10.1.0.1",
+                                                                    "path-id": 0,
+                                                                    "prefix": "10.0.0.2/32",
+                                                                    "state": {
+                                                                        "best-path": true,
+                                                                        "last-modified": "1774803406",
+                                                                        "origin": "10.1.0.1",
+                                                                        "path-id": 0,
+                                                                        "prefix": "10.0.0.2/32",
+                                                                        "valid-route": true
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "openconfig-bgp-deviation:attr-sets": {
+                                                                        "state": {
+                                                                            "next-hop": "0.0.0.0",
+                                                                            "origin": "INCOMPLETE"
+                                                                        }
+                                                                    },
+                                                                    "origin": "0.0.0.0",
+                                                                    "path-id": 0,
+                                                                    "prefix": "10.1.0.0/31",
+                                                                    "state": {
+                                                                        "best-path": true,
+                                                                        "last-modified": "1774803267",
+                                                                        "origin": "0.0.0.0",
+                                                                        "path-id": 0,
+                                                                        "prefix": "10.1.0.0/31",
+                                                                        "valid-route": true
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "openconfig-bgp-deviation:attr-sets": {
+                                                                        "as-path": {
+                                                                            "as-segment": [
+                                                                                {
+                                                                                    "state": {
+                                                                                        "member": [
+                                                                                            65002
+                                                                                        ],
+                                                                                        "type": "AS_SEQ"
+                                                                                    }
+                                                                                }
+                                                                            ]
+                                                                        },
+                                                                        "state": {
+                                                                            "next-hop": "10.1.0.1",
+                                                                            "origin": "INCOMPLETE"
+                                                                        }
+                                                                    },
+                                                                    "origin": "10.1.0.1",
+                                                                    "path-id": 0,
+                                                                    "prefix": "10.1.0.0/31",
+                                                                    "state": {
+                                                                        "last-modified": "1774803406",
+                                                                        "origin": "10.1.0.1",
+                                                                        "path-id": 0,
+                                                                        "prefix": "10.1.0.0/31",
+                                                                        "valid-route": true
+                                                                    }
+                                                                }
+                                                            ]
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "afi-safi-name": "openconfig-bgp-types:IPV6_UNICAST"
+                                            }
+                                        ]
+                                    }
+                                }
+                            },
+                            "config": {
+                                "identifier": "openconfig-policy-types:BGP",
+                                "name": "bgp"
+                            },
+                            "identifier": "openconfig-policy-types:BGP",
+                            "name": "bgp",
+                            "state": {
+                                "identifier": "openconfig-policy-types:BGP",
+                                "name": "bgp"
+                            }
+                        },
+                        {
+                            "config": {
+                                "identifier": "openconfig-policy-types:IGMP",
+                                "name": "igmp"
+                            },
+                            "identifier": "openconfig-policy-types:IGMP",
+                            "igmp": {
+                                "openconfig-igmp-ext:statistics": {
+                                    "counters": {
+                                        "queries": {
+                                            "received": {
+                                                "state": {
+                                                    "v3": 0
+                                                }
+                                            },
+                                            "sent": {
+                                                "state": {
+                                                    "v1": 0,
+                                                    "v2": 0,
+                                                    "v3": 0
+                                                }
+                                            }
+                                        },
+                                        "reports": {
+                                            "state": {
+                                                "v1": 0,
+                                                "v2": 0,
+                                                "v3": 0
+                                            }
+                                        }
+                                    },
+                                    "mtrace-counters": {
+                                        "state": {
+                                            "mtrace-request": 0,
+                                            "mtrace-response": 0,
+                                            "unsupported": 0
+                                        }
+                                    }
+                                }
+                            },
+                            "name": "igmp",
+                            "state": {
+                                "identifier": "openconfig-policy-types:IGMP",
+                                "name": "igmp"
+                            }
+                        },
+                        {
+                            "config": {
+                                "identifier": "openconfig-network-instance-deviation:IGMP_SNOOPING",
+                                "name": "IGMP-SNOOPING"
+                            },
+                            "identifier": "openconfig-network-instance-deviation:IGMP_SNOOPING",
+                            "name": "IGMP-SNOOPING",
+                            "state": {
+                                "identifier": "openconfig-network-instance-deviation:IGMP_SNOOPING",
+                                "name": "IGMP-SNOOPING"
+                            }
+                        },
+                        {
+                            "config": {
+                                "identifier": "openconfig-policy-types:OSPF",
+                                "name": "ospfv2"
+                            },
+                            "identifier": "openconfig-policy-types:OSPF",
+                            "name": "ospfv2",
+                            "state": {
+                                "identifier": "openconfig-policy-types:OSPF",
+                                "name": "ospfv2"
+                            }
+                        },
+                        {
+                            "config": {
+                                "identifier": "openconfig-policy-types:PIM",
+                                "name": "pim"
+                            },
+                            "identifier": "openconfig-policy-types:PIM",
+                            "name": "pim",
+                            "state": {
+                                "identifier": "openconfig-policy-types:PIM",
+                                "name": "pim"
+                            }
+                        },
+                        {
+                            "config": {
+                                "identifier": "openconfig-policy-types:STATIC",
+                                "name": "static"
+                            },
+                            "identifier": "openconfig-policy-types:STATIC",
+                            "name": "static",
+                            "state": {
+                                "identifier": "openconfig-policy-types:STATIC",
+                                "name": "static"
+                            }
+                        }
+                    ]
+                },
+                "state": {
+                    "enabled": true,
+                    "name": "default",
+                    "type": "openconfig-network-instance-types:DEFAULT_INSTANCE"
+                },
+                "table-connections": {
+                    "table-connection": [
+                        {
+                            "address-family": "openconfig-types:IPV4",
+                            "config": {
+                                "address-family": "openconfig-types:IPV4",
+                                "dst-protocol": "openconfig-policy-types:BGP",
+                                "src-protocol": "openconfig-policy-types:DIRECTLY_CONNECTED"
+                            },
+                            "dst-protocol": "openconfig-policy-types:BGP",
+                            "src-protocol": "openconfig-policy-types:DIRECTLY_CONNECTED",
+                            "state": {
+                                "address-family": "openconfig-types:IPV4",
+                                "dst-protocol": "openconfig-policy-types:BGP",
+                                "src-protocol": "openconfig-policy-types:DIRECTLY_CONNECTED"
+                            }
+                        }
+                    ]
+                },
+                "vlans": {
+                    "vlan": [
+                        {
+                            "config": {
+                                "autostate": "ENABLE",
+                                "name": "Vlan100",
+                                "vlan-id": 100
+                            },
+                            "members": {
+                                "member": [
+                                    {
+                                        "dynamic": "no",
+                                        "state": {
+                                            "interface": "Eth1/2"
+                                        },
+                                        "tagging_mode": "untagged"
+                                    }
+                                ]
+                            },
+                            "state": {
+                                "autostate": "ENABLE",
+                                "name": "Vlan100",
+                                "vlan-id": 100
+                            },
+                            "vlan-id": 100
+                        }
+                    ]
+                }
+            },
+            {
+                "afts": {
+                    "ipv4-unicast": {
+                        "ipv4-entry": [
+                            {
+                                "openconfig-aft-deviation:next-hops": {
+                                    "next-hop": [
+                                        {
+                                            "index": "1",
+                                            "interface-ref": {
+                                                "state": {
+                                                    "interface": "Management0"
+                                                }
+                                            },
+                                            "state": {
+                                                "index": "1",
+                                                "ip-address": "192.168.70.1"
+                                            }
+                                        }
+                                    ]
+                                },
+                                "prefix": "0.0.0.0/0",
+                                "state": {
+                                    "distance": 0,
+                                    "metric": 202,
+                                    "nhg-id": 23,
+                                    "origin-protocol": "openconfig-policy-types-ext:SYS_KERNEL",
+                                    "prefix": "0.0.0.0/0",
+                                    "uptime": "00:07:39"
+                                }
+                            },
+                            {
+                                "openconfig-aft-deviation:next-hops": {
+                                    "next-hop": [
+                                        {
+                                            "index": "1",
+                                            "interface-ref": {
+                                                "state": {
+                                                    "interface": "Management0"
+                                                }
+                                            },
+                                            "state": {
+                                                "directly-connected": true,
+                                                "index": "1"
+                                            }
+                                        }
+                                    ]
+                                },
+                                "prefix": "192.168.70.0/24",
+                                "state": {
+                                    "distance": 0,
+                                    "metric": 0,
+                                    "nhg-id": 18,
+                                    "origin-protocol": "openconfig-policy-types:DIRECTLY_CONNECTED",
+                                    "prefix": "192.168.70.0/24",
+                                    "uptime": "00:08:05"
+                                }
+                            }
+                        ]
+                    },
+                    "ipv6-unicast": {
+                        "ipv6-entry": [
+                            {
+                                "openconfig-aft-deviation:next-hops": {
+                                    "next-hop": [
+                                        {
+                                            "index": "1",
+                                            "interface-ref": {
+                                                "state": {
+                                                    "interface": "Management0"
+                                                }
+                                            },
+                                            "state": {
+                                                "directly-connected": true,
+                                                "index": "1"
+                                            }
+                                        }
+                                    ]
+                                },
+                                "prefix": "2600:1700:6b90:10df::1051/128",
+                                "state": {
+                                    "distance": 0,
+                                    "metric": 0,
+                                    "origin-protocol": "openconfig-policy-types:DIRECTLY_CONNECTED",
+                                    "prefix": "2600:1700:6b90:10df::1051/128",
+                                    "uptime": "00:08:03"
+                                }
+                            },
+                            {
+                                "openconfig-aft-deviation:next-hops": {
+                                    "next-hop": [
+                                        {
+                                            "index": "1",
+                                            "interface-ref": {
+                                                "state": {
+                                                    "interface": "Management0"
+                                                }
+                                            },
+                                            "state": {
+                                                "directly-connected": true,
+                                                "index": "1"
+                                            }
+                                        }
+                                    ]
+                                },
+                                "prefix": "fe80::/64",
+                                "state": {
+                                    "distance": 0,
+                                    "metric": 0,
+                                    "origin-protocol": "openconfig-policy-types:DIRECTLY_CONNECTED",
+                                    "prefix": "fe80::/64",
+                                    "uptime": "00:08:08"
+                                }
+                            },
+                            {
+                                "openconfig-aft-deviation:next-hops": {
+                                    "next-hop": [
+                                        {
+                                            "index": "1",
+                                            "interface-ref": {
+                                                "state": {
+                                                    "interface": "Management0"
+                                                }
+                                            },
+                                            "state": {
+                                                "directly-connected": true,
+                                                "index": "1"
+                                            }
+                                        }
+                                    ]
+                                },
+                                "prefix": "ff00::/8",
+                                "state": {
+                                    "distance": 0,
+                                    "metric": 256,
+                                    "origin-protocol": "openconfig-policy-types-ext:SYS_KERNEL",
+                                    "prefix": "ff00::/8",
+                                    "uptime": "00:08:08"
+                                }
+                            }
+                        ]
+                    }
+                },
+                "config": {
+                    "enabled": true,
+                    "name": "mgmt",
+                    "type": "openconfig-network-instance-types:L3VRF"
+                },
+                "fdb": {
+                    "config": {
+                        "mac-aging-time": 600
+                    }
+                },
+                "openconfig-mac-dampening:mac-dampening": {
+                    "config": {
+                        "interval": 5,
+                        "threshold": 5
+                    }
+                },
+                "name": "mgmt",
+                "state": {
+                    "enabled": true,
+                    "name": "mgmt",
+                    "type": "openconfig-network-instance-types:L3VRF"
+                }
+            }
+        ]
+    }
+}

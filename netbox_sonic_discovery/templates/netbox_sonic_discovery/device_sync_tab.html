@@ -1,0 +1,24 @@
+{% extends 'dcim/device/base.html' %}
+{% load helpers %}
+
+{% block title %}{{ object }} - SONiC Sync{% endblock %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header">
+        <h5 class="d-inline">SONiC Device Discovery</h5>
+    </div>
+    <div class="card-body">
+        <p>
+            Sync interfaces, IP addresses, LLDP-discovered cables, and device facts
+            from the live SONiC switch via NAPALM RESTCONF.
+        </p>
+        <form method="post" action="{% url 'plugins:netbox_sonic_discovery:device_sonic_sync' pk=object.pk %}">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-primary">
+                <i class="mdi mdi-sync"></i> Run Full Sync
+            </button>
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,262 @@
+---
+manufacturer: Dell
+model: 'DellEMC-Z9264f-C8D112'
+slug: 'dellemc-z9264f-c8d112'
+u_height: 1
+is_full_depth: true
+console-ports:
+  - name: Console
+    type: rj-45
+power-ports:
+  - name: PS1
+    type: iec-60320-c14
+  - name: PS2
+    type: iec-60320-c14
+interfaces:
+  - name: 'Eth1/1'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/1'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/2'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/2'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/3'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/3'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/4'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/4'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/5'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/5'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/6'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/6'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/7'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/7'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/8'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/8'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/9'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/9'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/10'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/10'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/11'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/11'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/12'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/12'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/13'
+    type: 100gbase-x-qsfp28
+  - name: 'Eth1/14'
+    type: 100gbase-x-qsfp28
+  - name: 'Eth1/15'
+    type: 100gbase-x-qsfp28
+  - name: 'Eth1/16'
+    type: 100gbase-x-qsfp28
+  - name: 'Eth1/17'
+    type: 100gbase-x-qsfp28
+  - name: 'Eth1/18'
+    type: 100gbase-x-qsfp28
+  - name: 'Eth1/19'
+    type: 100gbase-x-qsfp28
+  - name: 'Eth1/20'
+    type: 100gbase-x-qsfp28
+  - name: 'Eth1/21'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/21'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/22'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/22'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/23'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/23'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/24'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/24'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/25'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/25'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/26'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/26'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/27'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/27'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/28'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/28'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/29'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/29'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/30'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/30'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/31'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/31'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/32'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/32'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/33'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/33'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/34'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/34'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/35'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/35'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/36'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/36'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/37'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/37'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/38'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/38'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/39'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/39'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/40'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/40'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/41'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/41'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/42'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/42'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/43'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/43'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/44'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/44'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/45'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/45'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/46'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/46'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/47'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/47'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/48'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/48'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/49'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/49'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/50'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/50'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/51'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/51'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/52'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/52'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/53'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/53'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/54'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/54'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/55'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/55'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/56'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/56'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/57'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/57'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/58'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/58'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/59'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/59'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/60'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/60'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/61'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/61'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/62'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/62'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/63'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/63'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/64'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/64'
+    type: 50gbase-x-sfp28
+  - name: 'Eth1/65'
+    type: 10gbase-x-sfpp
+  - name: 'Eth1/66'
+    type: 10gbase-x-sfpp
+  - name: Management0
+    type: 1000base-t
+    mgmt_only: true

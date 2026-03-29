@@ -1,0 +1,20 @@
+{
+    "openconfig-if-ip:addresses": {
+        "address": [
+            {
+                "config": {
+                    "ip": "10.1.0.0",
+                    "prefix-length": 31,
+                    "secondary": false
+                },
+                "ip": "10.1.0.0",
+                "state": {
+                    "ip": "10.1.0.0",
+                    "origin": "STATIC",
+                    "prefix-length": 31,
+                    "secondary": false
+                }
+            }
+        ]
+    }
+}

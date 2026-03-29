@@ -1,0 +1,21 @@
+{
+    "openconfig-system:aaa": {
+        "authentication": {
+            "users": {
+                "user": [
+                    {
+                        "config": {
+                            "role": "admin",
+                            "username": "admin"
+                        },
+                        "state": {
+                            "role": "admin",
+                            "username": "admin"
+                        },
+                        "username": "admin"
+                    }
+                ]
+            }
+        }
+    }
+}

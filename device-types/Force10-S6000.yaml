@@ -1,0 +1,82 @@
+---
+manufacturer: Dell
+model: 'Force10-S6000'
+slug: 'force10-s6000'
+u_height: 1
+is_full_depth: true
+console-ports:
+  - name: Console
+    type: rj-45
+power-ports:
+  - name: PS1
+    type: iec-60320-c14
+  - name: PS2
+    type: iec-60320-c14
+interfaces:
+  - name: 'Eth0/0'
+    type: 40gbase-x-qsfpp
+  - name: 'Eth0/4'
+    type: 40gbase-x-qsfpp
+  - name: 'Eth0/8'
+    type: 40gbase-x-qsfpp
+  - name: 'Eth0/12'
+    type: 40gbase-x-qsfpp
+  - name: 'Eth0/16'
+    type: 40gbase-x-qsfpp
+  - name: 'Eth0/20'
+    type: 40gbase-x-qsfpp
+  - name: 'Eth0/24'
+    type: 40gbase-x-qsfpp
+  - name: 'Eth0/28'
+    type: 40gbase-x-qsfpp
+  - name: 'Eth0/32'
+    type: 40gbase-x-qsfpp
+  - name: 'Eth0/36'
+    type: 40gbase-x-qsfpp
+  - name: 'Eth0/40'
+    type: 40gbase-x-qsfpp
+  - name: 'Eth0/44'
+    type: 40gbase-x-qsfpp
+  - name: 'Eth0/48'
+    type: 40gbase-x-qsfpp
+  - name: 'Eth0/52'
+    type: 40gbase-x-qsfpp
+  - name: 'Eth0/56'
+    type: 40gbase-x-qsfpp
+  - name: 'Eth0/60'
+    type: 40gbase-x-qsfpp
+  - name: 'Eth0/64'
+    type: 40gbase-x-qsfpp
+  - name: 'Eth0/68'
+    type: 40gbase-x-qsfpp
+  - name: 'Eth0/72'
+    type: 40gbase-x-qsfpp
+  - name: 'Eth0/76'
+    type: 40gbase-x-qsfpp
+  - name: 'Eth0/80'
+    type: 40gbase-x-qsfpp
+  - name: 'Eth0/84'
+    type: 40gbase-x-qsfpp
+  - name: 'Eth0/88'
+    type: 40gbase-x-qsfpp
+  - name: 'Eth0/92'
+    type: 40gbase-x-qsfpp
+  - name: 'Eth0/96'
+    type: 40gbase-x-qsfpp
+  - name: 'Eth0/100'
+    type: 40gbase-x-qsfpp
+  - name: 'Eth0/104'
+    type: 40gbase-x-qsfpp
+  - name: 'Eth0/108'
+    type: 40gbase-x-qsfpp
+  - name: 'Eth0/112'
+    type: 40gbase-x-qsfpp
+  - name: 'Eth0/116'
+    type: 40gbase-x-qsfpp
+  - name: 'Eth0/120'
+    type: 40gbase-x-qsfpp
+  - name: 'Eth0/124'
+    type: 40gbase-x-qsfpp
+  - name: Management0
+    type: 1000base-t
+    mgmt_only: true

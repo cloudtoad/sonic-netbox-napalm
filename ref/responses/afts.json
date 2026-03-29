@@ -1,0 +1,145 @@
+{
+    "openconfig-network-instance:afts": {
+        "ipv4-unicast": {
+            "ipv4-entry": [
+                {
+                    "openconfig-aft-deviation:next-hops": {
+                        "next-hop": [
+                            {
+                                "index": "1",
+                                "interface-ref": {
+                                    "state": {
+                                        "interface": "Loopback0"
+                                    }
+                                },
+                                "state": {
+                                    "directly-connected": true,
+                                    "index": "1"
+                                }
+                            }
+                        ]
+                    },
+                    "prefix": "10.0.0.1/32",
+                    "state": {
+                        "distance": 0,
+                        "metric": 0,
+                        "nhg-id": 7,
+                        "origin-protocol": "openconfig-policy-types:DIRECTLY_CONNECTED",
+                        "prefix": "10.0.0.1/32",
+                        "uptime": "00:08:33"
+                    }
+                },
+                {
+                    "openconfig-aft-deviation:next-hops": {
+                        "next-hop": [
+                            {
+                                "index": "1",
+                                "interface-ref": {
+                                    "state": {
+                                        "interface": "Eth1/1"
+                                    }
+                                },
+                                "state": {
+                                    "index": "1",
+                                    "ip-address": "10.1.0.1"
+                                }
+                            }
+                        ]
+                    },
+                    "prefix": "10.0.0.2/32",
+                    "state": {
+                        "distance": 20,
+                        "metric": 0,
+                        "nhg-id": 12,
+                        "origin-protocol": "openconfig-policy-types:BGP",
+                        "prefix": "10.0.0.2/32",
+                        "uptime": "00:08:12"
+                    }
+                },
+                {
+                    "openconfig-aft-deviation:next-hops": {
+                        "next-hop": [
+                            {
+                                "index": "1",
+                                "interface-ref": {
+                                    "state": {
+                                        "interface": "Eth1/1"
+                                    }
+                                },
+                                "state": {
+                                    "directly-connected": true,
+                                    "index": "1"
+                                }
+                            }
+                        ]
+                    },
+                    "prefix": "10.1.0.0/31",
+                    "state": {
+                        "distance": 0,
+                        "metric": 0,
+                        "nhg-id": 6,
+                        "origin-protocol": "openconfig-policy-types:DIRECTLY_CONNECTED",
+                        "prefix": "10.1.0.0/31",
+                        "uptime": "00:08:33"
+                    }
+                }
+            ]
+        },
+        "ipv6-unicast": {
+            "ipv6-entry": [
+                {
+                    "openconfig-aft-deviation:next-hops": {
+                        "next-hop": [
+                            {
+                                "index": "1",
+                                "interface-ref": {
+                                    "state": {
+                                        "interface": "docker0"
+                                    }
+                                },
+                                "state": {
+                                    "directly-connected": true,
+                                    "index": "1"
+                                }
+                            }
+                        ]
+                    },
+                    "prefix": "fd00::/80",
+                    "state": {
+                        "distance": 0,
+                        "metric": 1024,
+                        "origin-protocol": "openconfig-policy-types-ext:SYS_KERNEL",
+                        "prefix": "fd00::/80",
+                        "uptime": "00:08:33"
+                    }
+                },
+                {
+                    "openconfig-aft-deviation:next-hops": {
+                        "next-hop": [
+                            {
+                                "index": "1",
+                                "interface-ref": {
+                                    "state": {
+                                        "interface": "eth1"
+                                    }
+                                },
+                                "state": {
+                                    "directly-connected": true,
+                                    "index": "1"
+                                }
+                            }
+                        ]
+                    },
+                    "prefix": "fe80::/64",
+                    "state": {
+                        "distance": 0,
+                        "metric": 0,
+                        "origin-protocol": "openconfig-policy-types:DIRECTLY_CONNECTED",
+                        "prefix": "fe80::/64",
+                        "uptime": "00:08:33"
+                    }
+                }
+            ]
+        }
+    }
+}
