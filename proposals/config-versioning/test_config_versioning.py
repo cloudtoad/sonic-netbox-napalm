@@ -1,127 +1,217 @@
-"""Tests for config save versioning."""
+"""Tests for config checkpoint versioning."""
 
 import json
 import os
+import tarfile
 import tempfile
 import time
 import unittest
 
-from config_versioning import (
+from config.config_versioning import (
+    create_checkpoint,
+    extract_checkpoint,
     format_size,
-    list_config_history,
-    rotate_config_file,
+    list_checkpoints,
 )
 
 
-class TestRotateConfigFile(unittest.TestCase):
+class TestCreateCheckpoint(unittest.TestCase):
     def setUp(self):
         self.tmpdir = tempfile.mkdtemp()
-        self.config_path = os.path.join(self.tmpdir, "config_db.json")
+        self.config_db = os.path.join(self.tmpdir, "config_db.json")
+        self.frr_dir = os.path.join(self.tmpdir, "frr")
+        self.checkpoint_dir = os.path.join(self.tmpdir, "checkpoints")
+        os.makedirs(self.frr_dir)
+
+        # Write test config files
+        with open(self.config_db, "w") as f:
+            json.dump({"PORT": {"Ethernet0": {"speed": "25000"}}}, f)
+        with open(os.path.join(self.frr_dir, "bgpd.conf"), "w") as f:
+            f.write("router bgp 65001\n")
+        with open(os.path.join(self.frr_dir, "zebra.conf"), "w") as f:
+            f.write("hostname test\n")
 
     def tearDown(self):
         import shutil
         shutil.rmtree(self.tmpdir)
 
-    def _write_config(self, path, content="{}"):
-        with open(path, "w") as f:
-            f.write(content)
+    def test_creates_archive(self):
+        path = create_checkpoint(
+            trigger="test",
+            config_db_file=self.config_db,
+            frr_dir=self.frr_dir,
+            checkpoint_dir=self.checkpoint_dir,
+        )
+        self.assertIsNotNone(path)
+        self.assertTrue(path.endswith("checkpoint.001.tar.gz"))
+        self.assertTrue(os.path.exists(path))
 
-    def test_no_existing_file(self):
-        """rotate_config_file returns None if file doesn't exist."""
-        result = rotate_config_file(self.config_path)
+    def test_archive_contains_all_files(self):
+        path = create_checkpoint(
+            trigger="test",
+            config_db_file=self.config_db,
+            frr_dir=self.frr_dir,
+            checkpoint_dir=self.checkpoint_dir,
+        )
+        with tarfile.open(path, "r:gz") as tar:
+            names = tar.getnames()
+        self.assertIn("config_db.json", names)
+        self.assertIn("frr/bgpd.conf", names)
+        self.assertIn("frr/zebra.conf", names)
+        self.assertIn("metadata.json", names)
+
+    def test_metadata_content(self):
+        path = create_checkpoint(
+            trigger="config save",
+            config_db_file=self.config_db,
+            frr_dir=self.frr_dir,
+            checkpoint_dir=self.checkpoint_dir,
+        )
+        with tarfile.open(path, "r:gz") as tar:
+            meta = json.loads(tar.extractfile("metadata.json").read())
+        self.assertEqual(meta["trigger"], "config save")
+        self.assertIn("timestamp", meta)
+        self.assertIn("sonic_version", meta)
+
+    def test_rotation(self):
+        for i in range(3):
+            create_checkpoint(
+                trigger=f"save-{i}",
+                config_db_file=self.config_db,
+                frr_dir=self.frr_dir,
+                checkpoint_dir=self.checkpoint_dir,
+            )
+
+        # Should have .001, .002, .003
+        for v in (1, 2, 3):
+            self.assertTrue(
+                os.path.exists(
+                    os.path.join(self.checkpoint_dir, f"checkpoint.{v:03d}.tar.gz")
+                )
+            )
+
+        # .001 should be the most recent (save-2)
+        with tarfile.open(
+            os.path.join(self.checkpoint_dir, "checkpoint.001.tar.gz"), "r:gz"
+        ) as tar:
+            meta = json.loads(tar.extractfile("metadata.json").read())
+        self.assertEqual(meta["trigger"], "save-2")
+
+    def test_max_checkpoints_enforced(self):
+        for i in range(5):
+            create_checkpoint(
+                trigger=f"save-{i}",
+                config_db_file=self.config_db,
+                frr_dir=self.frr_dir,
+                checkpoint_dir=self.checkpoint_dir,
+                max_checkpoints=3,
+            )
+
+        # Only 3 should exist
+        checkpoints = list_checkpoints(self.checkpoint_dir)
+        self.assertEqual(len(checkpoints), 3)
+
+    def test_no_config_db(self):
+        """Checkpoint works even if config_db.json doesn't exist."""
+        os.remove(self.config_db)
+        path = create_checkpoint(
+            config_db_file=self.config_db,
+            frr_dir=self.frr_dir,
+            checkpoint_dir=self.checkpoint_dir,
+        )
+        self.assertIsNotNone(path)
+        with tarfile.open(path, "r:gz") as tar:
+            names = tar.getnames()
+        self.assertNotIn("config_db.json", names)
+        self.assertIn("frr/bgpd.conf", names)
+
+
+class TestExtractCheckpoint(unittest.TestCase):
+    def setUp(self):
+        self.tmpdir = tempfile.mkdtemp()
+        self.config_db = os.path.join(self.tmpdir, "config_db.json")
+        self.frr_dir = os.path.join(self.tmpdir, "frr")
+        self.checkpoint_dir = os.path.join(self.tmpdir, "checkpoints")
+        os.makedirs(self.frr_dir)
+
+        with open(self.config_db, "w") as f:
+            json.dump({"PORT": {"Ethernet0": {"speed": "25000"}}}, f)
+        with open(os.path.join(self.frr_dir, "bgpd.conf"), "w") as f:
+            f.write("router bgp 65001\n")
+
+        create_checkpoint(
+            trigger="test",
+            config_db_file=self.config_db,
+            frr_dir=self.frr_dir,
+            checkpoint_dir=self.checkpoint_dir,
+        )
+
+    def tearDown(self):
+        import shutil
+        shutil.rmtree(self.tmpdir)
+
+    def test_extracts_files(self):
+        extract_dir = extract_checkpoint(version=1, checkpoint_dir=self.checkpoint_dir)
+        self.assertIsNotNone(extract_dir)
+        self.assertTrue(os.path.exists(os.path.join(extract_dir, "config_db.json")))
+        self.assertTrue(os.path.exists(os.path.join(extract_dir, "frr", "bgpd.conf")))
+
+        # Verify content
+        with open(os.path.join(extract_dir, "config_db.json")) as f:
+            data = json.load(f)
+        self.assertIn("PORT", data)
+
+        import shutil
+        shutil.rmtree(extract_dir)
+
+    def test_nonexistent_version(self):
+        result = extract_checkpoint(version=99, checkpoint_dir=self.checkpoint_dir)
         self.assertIsNone(result)
 
-    def test_first_rotation(self):
-        """First save creates .001 backup."""
-        self._write_config(self.config_path, '{"version": 1}')
-        result = rotate_config_file(self.config_path)
 
-        self.assertEqual(result, f"{self.config_path}.001")
-        self.assertTrue(os.path.exists(f"{self.config_path}.001"))
-        self.assertFalse(os.path.exists(self.config_path))
-
-        with open(f"{self.config_path}.001") as f:
-            data = json.load(f)
-        self.assertEqual(data["version"], 1)
-
-    def test_multiple_rotations(self):
-        """Successive rotations increment version numbers."""
-        # Create initial + two backups
-        self._write_config(f"{self.config_path}.002", '{"version": "a"}')
-        self._write_config(f"{self.config_path}.001", '{"version": "b"}')
-        self._write_config(self.config_path, '{"version": "c"}')
-
-        rotate_config_file(self.config_path)
-
-        # .002 -> .003, .001 -> .002, current -> .001
-        self.assertTrue(os.path.exists(f"{self.config_path}.001"))
-        self.assertTrue(os.path.exists(f"{self.config_path}.002"))
-        self.assertTrue(os.path.exists(f"{self.config_path}.003"))
-
-        with open(f"{self.config_path}.001") as f:
-            self.assertEqual(json.load(f)["version"], "c")
-        with open(f"{self.config_path}.002") as f:
-            self.assertEqual(json.load(f)["version"], "b")
-        with open(f"{self.config_path}.003") as f:
-            self.assertEqual(json.load(f)["version"], "a")
-
-    def test_max_backups_enforced(self):
-        """Oldest backups are removed when max_backups is reached."""
-        # Create 3 existing backups
-        self._write_config(f"{self.config_path}.001", '{"v": 1}')
-        self._write_config(f"{self.config_path}.002", '{"v": 2}')
-        self._write_config(f"{self.config_path}.003", '{"v": 3}')
-        self._write_config(self.config_path, '{"v": "current"}')
-
-        rotate_config_file(self.config_path, max_backups=3)
-
-        # .003 should have been removed (exceeded limit)
-        # .002 -> .003, .001 -> .002, current -> .001
-        self.assertTrue(os.path.exists(f"{self.config_path}.001"))
-        self.assertTrue(os.path.exists(f"{self.config_path}.002"))
-        self.assertTrue(os.path.exists(f"{self.config_path}.003"))
-        self.assertFalse(os.path.exists(f"{self.config_path}.004"))
-
-    def test_non_numeric_suffixes_ignored(self):
-        """Files with non-numeric suffixes are not affected."""
-        self._write_config(self.config_path, '{}')
-        self._write_config(f"{self.config_path}.bak", '{}')
-        self._write_config(f"{self.config_path}.old", '{}')
-
-        rotate_config_file(self.config_path)
-
-        # .bak and .old should be untouched
-        self.assertTrue(os.path.exists(f"{self.config_path}.bak"))
-        self.assertTrue(os.path.exists(f"{self.config_path}.old"))
-        self.assertTrue(os.path.exists(f"{self.config_path}.001"))
-
-
-class TestListConfigHistory(unittest.TestCase):
+class TestListCheckpoints(unittest.TestCase):
     def setUp(self):
         self.tmpdir = tempfile.mkdtemp()
-        self.config_path = os.path.join(self.tmpdir, "config_db.json")
+        self.config_db = os.path.join(self.tmpdir, "config_db.json")
+        self.frr_dir = os.path.join(self.tmpdir, "frr")
+        self.checkpoint_dir = os.path.join(self.tmpdir, "checkpoints")
+        os.makedirs(self.frr_dir)
+
+        with open(self.config_db, "w") as f:
+            json.dump({}, f)
 
     def tearDown(self):
         import shutil
         shutil.rmtree(self.tmpdir)
 
-    def test_no_backups(self):
-        history = list_config_history(self.config_path)
-        self.assertEqual(history, [])
+    def test_empty(self):
+        self.assertEqual(list_checkpoints(self.checkpoint_dir), [])
 
-    def test_lists_backups_in_order(self):
-        for i in range(1, 4):
-            path = f"{self.config_path}.{i:03d}"
-            with open(path, "w") as f:
-                f.write("{}")
-            # Stagger mtimes
-            os.utime(path, (time.time() - (3 - i) * 60, time.time() - (3 - i) * 60))
+    def test_lists_in_order(self):
+        for i in range(3):
+            create_checkpoint(
+                trigger=f"save-{i}",
+                config_db_file=self.config_db,
+                frr_dir=self.frr_dir,
+                checkpoint_dir=self.checkpoint_dir,
+            )
 
-        history = list_config_history(self.config_path)
-        self.assertEqual(len(history), 3)
-        self.assertEqual(history[0]["version"], 1)
-        self.assertEqual(history[1]["version"], 2)
-        self.assertEqual(history[2]["version"], 3)
+        checkpoints = list_checkpoints(self.checkpoint_dir)
+        self.assertEqual(len(checkpoints), 3)
+        self.assertEqual(checkpoints[0]["version"], 1)
+        self.assertEqual(checkpoints[1]["version"], 2)
+        self.assertEqual(checkpoints[2]["version"], 3)
+
+    def test_includes_metadata(self):
+        create_checkpoint(
+            trigger="unit-test",
+            config_db_file=self.config_db,
+            frr_dir=self.frr_dir,
+            checkpoint_dir=self.checkpoint_dir,
+        )
+        checkpoints = list_checkpoints(self.checkpoint_dir)
+        self.assertEqual(checkpoints[0]["trigger"], "unit-test")
+        self.assertNotEqual(checkpoints[0]["timestamp"], "")
 
 
 class TestFormatSize(unittest.TestCase):
