@@ -1,0 +1,97 @@
+module sonic-config-validate {
+    namespace "http://github.com/Azure/sonic-config-validate";
+    prefix scfgval;
+    yang-version 1.1;
+
+    organization
+        "SONiC";
+
+    contact
+        "SONiC";
+
+    description
+        "RPC for validating a config_db.json payload against YANG models
+         without applying it to the running configuration.";
+
+    revision 2026-03-29 {
+        description
+            "Initial revision.";
+    }
+
+    rpc validate-config {
+        description
+            "Validate a config_db.json payload against all loaded YANG models.
+             Returns a comprehensive list of all validation errors.
+             Does not modify running configuration.";
+
+        input {
+            leaf config-db-json {
+                type string;
+                description
+                    "Full or partial config_db.json content as a JSON string.";
+            }
+        }
+
+        output {
+            leaf valid {
+                type boolean;
+                description
+                    "True if the configuration passed all validation checks.";
+            }
+
+            leaf error-count {
+                type uint32;
+                description
+                    "Total number of validation errors found.";
+            }
+
+            list errors {
+                key "index";
+                description
+                    "List of all validation errors found in the configuration.";
+
+                leaf index {
+                    type uint32;
+                    description
+                        "Error index (1-based).";
+                }
+
+                leaf table-name {
+                    type string;
+                    description
+                        "Config DB table name where the error was found.";
+                }
+
+                leaf key {
+                    type string;
+                    description
+                        "Config DB entry key where the error was found.";
+                }
+
+                leaf field {
+                    type string;
+                    description
+                        "Field name that failed validation, if applicable.";
+                }
+
+                leaf error-code {
+                    type string;
+                    description
+                        "CVL error code (e.g. SYNTAX_ERROR, SEMANTIC_ERROR).";
+                }
+
+                leaf error-message {
+                    type string;
+                    description
+                        "Human-readable description of the validation error.";
+                }
+
+                leaf constraint {
+                    type string;
+                    description
+                        "YANG constraint that was violated, if applicable.";
+                }
+            }
+        }
+    }
+}
